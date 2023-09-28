@@ -1,5 +1,5 @@
 from flask import Flask, redirect, jsonify, render_template, request
-from config.db import app
+from BackEnd.config.db import app
 
 """from api.Clientes import ruta_cliente
 from api.Ruta import  ruta_ruta
