@@ -2,8 +2,10 @@ from flask import Flask, redirect, jsonify, render_template, request
 from config.db import app
 
 from api.User import ruta_user
+from api.Community import ruta_community
 
 app.register_blueprint(ruta_user, url_prefix="/api")
+app.register_blueprint(ruta_community, url_prefix="/api")
 
 @app.route("/")
 def index():
