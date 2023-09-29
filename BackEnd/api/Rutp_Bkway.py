@@ -24,17 +24,17 @@ def saverutpbkway():
     return "Datos guardados con exitos"
 
 @ruta_RutpBkway.route("/updaterutpbkway", methods=["PUT"])
-def updateusucom():
+def updaterutpbkway():
     id = request.json['id_RutpBkway']
-    nusucom = Usu_com.query.get(id) #Select * from Cliente where id = id
-    nusucom.id_route = request.json['id_route']
-    nusucom.id_bikeway = request.json['id_bikeway']
+    nrutpbway = Usu_com.query.get(id) #Select * from Cliente where id = id
+    nrutpbway.id_route = request.json['id_route']
+    nrutpbway.id_bikeway = request.json['id_bikeway']
     db.session.commit()
     return "Datos Actualizado con exitos"
 
-@ruta_RutpBkway.route("/deleteusucom/<id>", methods=["GET"])
-def deleteusucom(id):
-    usu_com = Usu_com.query.get(id)
-    db.session.delete(usu_com)
+@ruta_RutpBkway.route("/deleterutpbkway/<id>", methods=["GET"])
+def deleterutpbkway(id):
+    rutp_bkway = Rutp_Bkway.query.get(id)
+    db.session.delete(rutp_bkway)
     db.session.commit()
-    return jsonify(usucom_schema.dump(usu_com))
+    return jsonify(RutpBkwaySchema.dump(rutp_bkway))
