@@ -26,7 +26,7 @@ def saverutpbkway():
 @ruta_RutpBkway.route("/updaterutpbkway", methods=["PUT"])
 def updaterutpbkway():
     id = request.json['id_RutpBkway']
-    nrutpbway = Usu_com.query.get(id) #Select * from Cliente where id = id
+    nrutpbway = Rutp_Bkway.query.get(id) #Select * from Cliente where id = id
     nrutpbway.id_route = request.json['id_route']
     nrutpbway.id_bikeway = request.json['id_bikeway']
     db.session.commit()
