@@ -3,7 +3,7 @@ from config.db import db, app, ma
 from models.User import User, UserSchema
 
 ruta_user = Blueprint("ruta_user",__name__)
-#routes_cliente = Blueprint("routes_cliente", __name__)
+
 
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
