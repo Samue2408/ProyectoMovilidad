@@ -8,6 +8,7 @@ from api.Usu_Com import ruta_usucom
 from api.Routes import ruta_route
 from api.Strategics_Points import ruta_strategics_points
 from api.BikeWays import ruta_bikeways
+from api.Alerts import ruta_alerts
 from api.Rutp_Bkway import ruta_RutpBkway
 
 app.register_blueprint(ruta_user, url_prefix="/api")
@@ -17,6 +18,7 @@ app.register_blueprint(ruta_usucom, url_prefix="/api")
 app.register_blueprint(ruta_route, url_prefix="/api")
 app.register_blueprint(ruta_strategics_points, url_prefix="/api")
 app.register_blueprint(ruta_bikeways, url_prefix="/api")
+app.register_blueprint(ruta_alerts, url_prefix="/api")
 app.register_blueprint(ruta_RutpBkway, url_prefix="/api")
 
 
