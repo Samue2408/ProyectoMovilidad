@@ -40,4 +40,3 @@ def deletepublication(id):
     db.session.delete(publication)
     db.session.commit()
     return jsonify(publication_schema.dump(publication))
- 
