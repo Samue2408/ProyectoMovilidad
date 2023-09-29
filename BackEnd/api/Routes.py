@@ -22,7 +22,9 @@ def saveroute():
     final_latitude = request.json['final_latitude']
     final_longitude = request.json['final_longitude']
     create_date = request.json['create_date']
-    new_route = Route(name, description, initial_latitude, initial_longitude, final_latitude, final_longitude, create_date)
+    id_user = request.json['id_user']
+    id_spoints = request.json['id_spoints']
+    new_route = Route(name, description, initial_latitude, initial_longitude, final_latitude, final_longitude, create_date, id_user, id_spoints)
     db.session.add(new_route)
     db.session.commit()
     return "Datos guardados con exitos"
@@ -38,6 +40,8 @@ def updateroute():
     nSP.final_latitude = request.json['final_latitude']
     nSP.final_longitude = request.json['final_longitude']
     nSP.create_date = request.json['create_date']
+    nSP.id_user = request.json['id_user']
+    nSP.id_spoints = request.json['id_spoints']
     db.session.commit()
     return "Datos Actualizado con exitos"
 
