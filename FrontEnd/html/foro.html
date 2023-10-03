@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href=".././css/style_foro.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fro</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Foro Comunitario</h1>
+
+      <div class="forum">
+        <div class="categories">
+          <h2>Comunidad A</h2>
+          <div class="messages" id="comunidadA">
+            <!-- Mensajes de la Comunidad A -->
+          </div>
+
+          <h2>Comunidad B</h2>
+          <div class="messages" id="comunidadB">
+            <!-- Mensajes de la Comunidad B -->
+          </div>
+        </div>
+
+        <div class="input-box">
+          <select id="comunidadSelector">
+            <option value="comunidadA">Comunidad A</option>
+            <option value="comunidadB">Comunidad B</option>
+          </select>
+          <input type="text" id="message" placeholder="Escribe tu mensaje..." />
+          <button onclick="enviarMensaje()">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src=".././javascript/scri_foro.js"></script>
+  </body>
+</html>

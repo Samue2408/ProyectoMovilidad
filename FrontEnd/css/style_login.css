@@ -15,6 +15,8 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="%236f32be" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 19l0 -4l-3 -3l5 -4l2 3l3 0" /><path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>'),
+    auto;
 }
 
 .container {
@@ -47,7 +49,7 @@ body {
 }
 
 .container button {
-  background-color: #512da8;
+  background-color: #8561fa;
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -163,9 +165,9 @@ body {
 }
 
 .toggle {
-  background-color: #512da8;
+  background-color: #00ced1;
   height: 100%;
-  background: linear-gradient(to right, #5c6bc0, #512da8);
+  background: linear-gradient(to right, #b9a5f9, #ae97f9);
   color: #fff;
   position: relative;
   left: -100%;

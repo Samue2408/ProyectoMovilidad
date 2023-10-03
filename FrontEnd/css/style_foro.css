@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.forum {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.categories {
+  margin-bottom: 20px;
+}
+
+.messages {
+  margin-bottom: 10px;
+}
+
+.input-box {
+  display: flex;
+  margin-top: 10px;
+}
+
+select,
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
