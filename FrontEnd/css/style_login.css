@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #00ced1;
+  --secundario: #ae97f9;
+  --gris: #757575;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -7,6 +7,7 @@ class MyMenu extends HTMLElement {
 
     template.innerHTML = `
         <style>
+        
           .nav-bg {
             background-color: var(--secundario);
           }
@@ -30,6 +31,9 @@ class MyMenu extends HTMLElement {
           .navegacion-principal a:hover {
             background-color: var(--primario);
             color: var(--blanco);
+          }
+          .imag {
+            width: 10%;
           }
         </style>
         <div class="nav-bg">
