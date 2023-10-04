@@ -1,4 +1,4 @@
-class menu extends HTMLElement {
+class MyMenu extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
