@@ -6,18 +6,18 @@
     <title>Pagina principal</title>
     <link
       rel="icon"
-      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bike' width='20' height='20' viewBox='0 0 24 24' stroke-width='3' stroke='%236f32be' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M12 19l0 -4l-3 -3l5 -4l2 3l3 0' /><path d='M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /></svg>"
-    />
-
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bike' width='20' height='20' viewBox='0 0 24 24' stroke-width='3' stroke='%236f32be' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M12 19l0 -4l-3 -3l5 -4l2 3l3 0' /><path d='M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /></svg>"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href=".././css/style.css" />
     <link rel="stylesheet" href=".././css/normalize.css" />
   </head>
-
   <body>
     <div class="nav-bg">
       <img class="imag" src=".././img/bisi.png" />
       <nav class="navegacion-principal contenedor">
-        <a href="#">Ciclorutas</a>
+        <a href="index.html">Pagina principal</a>
         <a href="mapa.html">Mapa</a>
         <a href="foro.html">Comunidad</a>
         <a href="#">Contacto</a>
@@ -25,18 +25,88 @@
         <a href="login.html">Iniciar Seccion</a>
       </nav>
     </div>
-    <section class="interes">
-      <div class="contenido-interes">
-        <h1>Centros comerciales</h1>
-        <h2>Centro comercial Buenavista</h2>
-        <img src=".././img/buenavista.jpeg" alt="" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-          assumenda amet impedit, numquam deserunt necessitatibus dolore
-          nesciunt tempora sint nobis praesentium aliquid, nihil temporibus quas
-          adipisci
-        </p>
+  </div>
+  <header class="content header">
+      <h2 class="title">principal</h2>
+      <p>
+          Aqui hablaremos un poco sobre el objetivo de la pagina
+      basandonos en nuestra investigacion
+          
+      </p>
+      <div class="btn-home">
+          <a href="mapa.html" class="btn">Mapa</a>
       </div>
-    </section>
+  </header>
+
+  <section class="content ciclorutas">
+      <h2 class="title">ciclorutas</h2>
+      <p>Aqui escribiremos textualmente las vias de cicloruta de la ciudad
+          acompa;ados de sugerencias de acceso y puntos de interes
+      </p>
+      <div class="box-container">
+          <div class="box">
+              <i class="fab fa-angular"></i>
+              <h3>centro comercial</h3>
+              <p>centros comerciales info</p>
+          </div>
+          <div class="box">
+              <i class="fab fa-apple"></i>
+              <h3>turistico</h3>
+              <p>sitios turisticos</p>
+          </div>
+          <div class="box">
+              <i class="fab fa-android"></i>
+              <h3>otros</h3>
+              <p>otros sitios de interes encontrados en la investigacion</p>
+          </div>
+
+      </div>
+
+
+  </section>
+  <section class="content mapa">
+      <h2 class="title">mapa</h2>
+       <p>un poco de info y mapa interativo
+      </p>
+      <figure class="map">
+          <img src="mapa.png" height="100px" width="200%" alt="mapa">
+      </figure>
+      <div class="btn-mapa">
+        <a href="mapa.html" class="btn">Mapa</a>
+    </div>
+  </section>
+  <div class="contenido-ter">
+    <div class="imagen-ter">
+        <img src=".././img/cerr.png" alt="ultima imagen">
+    </div>
+
+    <div class="contactenos">
+        <div class="titulo">
+            <h1 class="contactenos">Contactenos</h1>
+        </div>
+        <div class="redesS">
+            <ul class="redes">
+                <li style="--i:#030543;--j:#2900f4;">
+                    <span class="icon"><i class="fa-brands fa-facebook" style="color: #000000;"></i></span>
+                    <span class="titulo">Facebok</span>
+                </li>
+                <li style="--i:#00bfff;--j:#006eff;">
+                    <span class="icon"><i class=" fa-brands fa fa-twitter" style="color: #000000;"></i></span>
+                    <span class="titulo">Twitter</span>
+                </li>
+                <li style="--i:#057eff;--j:#091e92;">
+                    <span class="icon"><i class="fa-brands fa fa-linkedin" style="color: #000000;"></i></span>
+                    <span class="titulo">Linkedin</span>
+                </li>
+                <li style="--i:#ff4c88;--j:#cb0ab8;">
+                    <span class="icon"><i class="fa-solid fa-envelope" style="color: #000000;"></i></span>
+                    <span class="titulo">Correo</span>
+                </li>
+            </ul>    
+        </div>
+    </div>
+</div>
+
+
   </body>
 </html>

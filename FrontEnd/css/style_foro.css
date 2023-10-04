@@ -1,0 +1,56 @@
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #00ced1;
+  --secundario: #ae97f9;
+  --gris: #757575;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 16px;
+  text-align: center;
+  font-family: "Krub", sans-serif;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="%236f32be" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 19l0 -4l-3 -3l5 -4l2 3l3 0" /><path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>'),
+    auto;
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+h1 {
+  font-size: 3.8rem;
+}
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.nav-bg {
+  background-color: var(--secundario);
+}
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 480px) {
+  .navegacion-principal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.navegacion-principal a {
+  padding: 1rem;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.navegacion-principal a:hover {
+  background-color: var(--primario);
+  color: var(--blanco);
+}
