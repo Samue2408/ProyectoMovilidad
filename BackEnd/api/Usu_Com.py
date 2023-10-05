@@ -18,7 +18,8 @@ def usucoms():
 def saveusucom():
     id_com = request.json['id_com']
     id_user = request.json['id_user']
-    new_usucom = Usu_com(id_com, id_user)
+    type_usu = request.json['type_usu']
+    new_usucom = Usu_com(id_com, id_user, type_usu)
     db.session.add(new_usucom)
     db.session.commit()
     return "Datos guardados con exitos"
@@ -29,6 +30,7 @@ def updateusucom():
     nusucom = Usu_com.query.get(id) #Select * from Cliente where id = id
     nusucom.id_com = request.json['id_com']
     nusucom.id_user = request.json['id_user']
+    nusucom.type_usu = request.json['type_usu']
     db.session.commit()
     return "Datos Actualizado con exitos"
 
