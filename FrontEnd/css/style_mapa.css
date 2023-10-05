@@ -5,7 +5,6 @@
   --secundario: #ae97f9;
   --gris: #757575;
 }
-
 html {
   font-size: 62.5%;
   box-sizing: inherit;
@@ -23,4 +22,32 @@ body {
     auto;
   background-color: #c9d6ff;
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+#map {
+  height: 100vh;
+}
+
+.grid-template-column-3-4 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.input {
+  display: flex;
+  width: 90%;
+  height: 2rem;
+}
+
+.bg-gray {
+  background-color: aliceblue;
+}
+
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.mt-1 {
+  margin-top: 1rem;
 }
