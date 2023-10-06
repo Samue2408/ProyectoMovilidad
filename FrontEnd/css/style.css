@@ -120,12 +120,12 @@ p {
 }
 
 .imagen-ter img {
-  width: 60%;
+  width: 80%;
 }
 
 .contenido-ter .imagen-ter img {
   margin: 10px;
-  border-radius: 400px;
+  border-radius: 500px;
 }
 
 .contenido-ter .contactenos {

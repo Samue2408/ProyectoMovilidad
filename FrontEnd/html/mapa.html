@@ -2,28 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href=".././css/normalize.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href=".././css/style_mapa.css" />
     <script src=".././javascript/menu.js" type="module"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBthbH7IlCeLWGX8CdOjc9YoMesiLCwcWM&callback=initMap"
-      async
-      defer
-    ></script>
-    <title>mapa</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bike' width='20' height='20' viewBox='0 0 24 24' stroke-width='3' stroke='%236f32be' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M12 19l0 -4l-3 -3l5 -4l2 3l3 0' /><path d='M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /></svg>"
+    />
+    <title>Mapa</title>
   </head>
-  <body class="body">
-    <my-menu></my-menu>
-    <div class="grid-template-column-3-4">
-      <div>
-        <div id="map"></div>
-      </div>
-      <div class="bg-gray d-flex justify-content-center mt-1">
-        <input type="text" id="place-input" class="input" />
-      </div>
+</head>
+<my-menu></my-menu>
+<body class="body">
+  <div class="grid-template-column-3-4">
+    <div>
+      <div id="map"></div>
     </div>
-
-    <script type="module" src=".././javascript/main.js"></script>
+    <div class="bg-gray d-flex justify-content-center mt-1">
+      <input type="text" id="place-input" class="input" />
+    </div>
+  </div>
+      <script type="module" src=".././javascript/main.js"></script>
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIofybiA_5qI7G4YH2u336yZkm94EE4aM&libraries=places&callback=initMap"
+        defer
+      ></script>
   </body>
 </html>
