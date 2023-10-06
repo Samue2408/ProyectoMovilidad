@@ -7,8 +7,8 @@ let properties = [
     nombre: "universidad libre centro",
     telefono: 11111111,
     coords: {
-      lat:10.988737604812494,
-      lng:-74.78812772149456,
+      lat: 10.988737604812494,
+      lng: -74.78812772149456,
     },
     cuartos: "3",
     banios: "2",
@@ -32,7 +32,7 @@ window.initMap = function () {
         infoWindow.setContent(informationCard);
         infoWindow.open(map, marker);
         map.setCenter(propertie.coords);
-        map.setZoom(14);
+        map.setZoom(40);
       });
     });
   };
@@ -47,15 +47,14 @@ const searchGoogleMap = () => {
     if (placeInput.value !== "") {
       const place = autocomplete.getPlace();
       map.setCenter(place.geometry.location);
-      map.setZoom(13);
+      map.setZoom(40);
     }
   });
 };
 const firstPositionMap = () => {
- 
-  const coords = { lat: 11.004696200585443, lng:-74.80463317571127 };
+  const coords = { lat: 11.004696200585443, lng: -74.80463317571127 };
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 6,
+    zoom: 40,
     center: coords,
   });
 };
@@ -81,7 +80,7 @@ const getYourApproximateLocation = () => {
           lng: longitude,
         };
         map.setCenter(coords);
-        map.setZoom(13);
+        map.setZoom(40);
         new google.maps.Marker({
           position: coords,
           map: map,

@@ -42,7 +42,7 @@ class MyMenu extends HTMLElement {
             <a href="index.html">Pagina principal</a>
             <a href="mapa.html">Mapa</a>
             <a href="foro.html">Comunidad</a>
-            <a href="#">Contacto</a>
+            <a href="#contactanos">Contacto</a>
             <a href="ciclorutas.html">Ciclorutas</a>
             <a href="login.html">Iniciar Sesion</a>
           </nav>

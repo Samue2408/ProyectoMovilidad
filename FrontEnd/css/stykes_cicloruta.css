@@ -24,3 +24,30 @@ body {
   background-color: #c9d6ff;
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
+
+#ciclorutas-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#ciclorutas-container h2 {
+  color: var(--primario);
+}
+
+#ciclorutas-container h3 {
+  color: var(--secundario);
+  margin-top: 20px;
+}
+
+#ciclorutas-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+#ciclorutas-container li {
+  margin-bottom: 10px;
+}
