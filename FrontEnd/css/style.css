@@ -102,9 +102,12 @@ p {
   padding: 30px;
   background: #20325c;
 }
+.ciclorutas .imag {
+  width: 80%;
+}
 
 .mapa {
-  background: #0e0606;
+  background: #343c86;
   padding-top: 20px;
   padding-bottom: 0;
 }
