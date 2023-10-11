@@ -24,7 +24,23 @@ app.register_blueprint(ruta_RutpBkway, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return "hola"
+    return render_template('index.html')
+
+@app.route("/mapa")
+def mapa():
+    return render_template('mapa.html')
+
+@app.route("/foro")
+def comunidad():
+    return render_template('foro.html')
+
+@app.route("/ciclorutas")
+def cicloruta():
+    return render_template('ciclorutas.html')
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host='0.0.0.0')
