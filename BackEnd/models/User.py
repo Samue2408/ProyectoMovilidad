@@ -1,4 +1,5 @@
 from config.db import app, db, ma
+from datetime import date
 
 class User(db.Model):
     __tablename__ = "User"
@@ -7,14 +8,13 @@ class User(db.Model):
     name = db.Column(db.String(50))
     email = db.Column(db.String(100), unique= True)
     password = db.Column(db.String(25))
-    regis_date = db.Column(db.Date)
+    regis_date = db.Column(db.Date, default=date.today)
     genre = db.Column(db.String(15)) #genero
 
-    def __init__(self, name, email, password, regis_date, genre):
+    def __init__(self, name, email, password, genre):
         self.name = name
         self.email = email
         self.password = password
-        self.regis_date = regis_date
         self.genre = genre
 
 with app.app_context():

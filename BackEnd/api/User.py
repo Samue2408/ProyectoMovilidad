@@ -19,9 +19,8 @@ def saveuser():
     name = request.json['name']
     email = request.json['email']
     password = request.json['password']
-    date = request.json['regis_date']
     genre = request.json['genre']
-    new_user = User(name, email, password, date, genre)
+    new_user = User(name, email, password, genre)
     db.session.add(new_user)
     db.session.commit()
     return "Datos guardados con exitos"
@@ -33,7 +32,6 @@ def updateuser():
     nuser.name = request.json['name']
     nuser.email = request.json['email']
     nuser.password = request.json['password']
-    nuser.regis_date = request.json['regis_date']
     nuser.genre = request.json['genre']
     db.session.commit()
     return "Datos Actualizado con exitos"
