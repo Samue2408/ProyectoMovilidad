@@ -7,9 +7,22 @@ class MyMenu extends HTMLElement {
 
     template.innerHTML = `
         <style>
-          
+        :host {
+          display: block;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          background-color: var(--secundario);
+          z-index: 1000;
+        }
+        .form-container {
+          margin-top: 100px; /* Ajusta este valor según sea necesario para evitar el solapamiento con el menú */
+        }
         .nav-bg {
           background-color: var(--secundario);
+          position: fixed;
+          width: 100%; 
+          z-index: 1000;
         }
         .navegacion-principal {
           display: flex;
