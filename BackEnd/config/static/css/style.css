@@ -62,7 +62,7 @@ h3 {
 .header {
   height: 60vh !important;
   background: linear-gradient(rgba(47, 50, 57, 0.75), rgba(32, 35, 42, 0.219)),
-    url("../img/bisi.png") no-repeat center;
+    url("../img/bisi.webp") no-repeat center;
   background-size: cover;
 }
 .title {

@@ -15,8 +15,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">    
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
   </head>
   <body>
     <my-menu></my-menu>
@@ -27,7 +33,7 @@
         bicicletas en Barranquilla! Somos apasionados por explorar nuestra
         hermosa ciudad sobre dos ruedas y estamos emocionados de compartir esa
         pasión contigo. En CicloBaq, nos dedicamos a promover un estilo de vida
-        activo, sostenible y   saludable a través del ciclismo.
+        activo, sostenible y saludable a través del ciclismo.
       </p>
     </header>
 
@@ -47,7 +53,12 @@
       <h2 class="title">mapa</h2>
       <p>un poco de info y mapa interativo</p>
       <figure class="map">
-        <img src="../static/img/mapa.png" height="100px" width="200%" alt="mapa" />
+        <img
+          src="../static/img/mapa.png"
+          height="100px"
+          width="200%"
+          alt="mapa"
+        />
       </figure>
       <div class="btn-mapa">
         <a href="mapa.html" class="btn">Mapa</a>

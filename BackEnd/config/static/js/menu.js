@@ -37,7 +37,7 @@ class MyMenu extends HTMLElement {
         }
         </style>
         <div class="nav-bg">
-          <img class="imag" src=""../img/bisi.png"" />
+          <img class="imag" src="".././img/bisi.png"" />
           <nav class="navegacion-principal contenedor">
             <a href="/">Pagina principal</a>
             <a href="/mapa">Mapa</a>
