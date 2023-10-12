@@ -16,13 +16,11 @@ class MyMenu extends HTMLElement {
           z-index: 1000;
         }
         .form-container {
-          margin-top: 100px; /* Ajusta este valor según sea necesario para evitar el solapamiento con el menú */
+          margin-top:0;
         }
         .nav-bg {
           background-color: var(--secundario);
-          position: fixed;
-          width: 100%; 
-          z-index: 1000;
+
         }
         .navegacion-principal {
           display: flex;
@@ -46,7 +44,7 @@ class MyMenu extends HTMLElement {
           color: var(--blanco);
         }
         .imag {
-          width: 10%;
+          width: 100%;
         }
         </style>
         <div class="nav-bg">
