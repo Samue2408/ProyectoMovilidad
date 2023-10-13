@@ -1,4 +1,4 @@
-from flask import Flask, redirect, jsonify, render_template, request
+from flask import Flask, redirect, jsonify, render_template, request, session
 from config.db import app
 
 from api.User import ruta_user
@@ -23,7 +23,10 @@ app.register_blueprint(ruta_RutpBkway, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    if 'email' in session:
+        return render_template('index.html', Email= session['email'])
+    else:
+        return render_template('index.html')
 
 @app.route("/mapa")
 def mapa():
@@ -40,7 +43,7 @@ def cicloruta():
 @app.route("/login")
 def login():
     return render_template('login.html')
-    
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host='0.0.0.0')

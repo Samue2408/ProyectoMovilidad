@@ -35,7 +35,7 @@ document.getElementById("signup").addEventListener("click", function (event) {
       },
       body: JSON.stringify(dataToSend)
     }) 
-    window.location.href = "/";
+    window.location.href = "/login";
   }  
   event.preventDefault();
 }); 

@@ -55,7 +55,6 @@ class MyMenu extends HTMLElement {
             <a href="/foro">Comunidad</a>
             <a href="/#contactanos">Contacto</a>
             <a href="/ciclorutas">Ciclorutas</a>
-            <a href="/login">Iniciar Sesion</a>
           </nav>
         </div>
       `;

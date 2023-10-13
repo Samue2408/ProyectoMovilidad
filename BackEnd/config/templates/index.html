@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina principal</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bike' width='20' height='20' viewBox='0 0 24 24' stroke-width='3' stroke='%236f32be' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M12 19l0 -4l-3 -3l5 -4l2 3l3 0' /><path d='M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /></svg>"
-    />
+{% extends './layout.html' %}
+
+{% block title %}Pagina principal{% endblock %}
+
+{% block styles %}
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    />    
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
@@ -23,11 +19,11 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/normalize.css') }}"
     />
-  </head>
+    
+{% endblock %}
 
-  <body>
-    <my-menu></my-menu>
-    <div id="ciclorutas-container" class="with-margin"></div>
+
+{% block body %}
     <header class="content header">
       <h2 class="title">Bienvenidos a <span>CicloBaq</span></h2>
       <p>
@@ -37,6 +33,11 @@
         pasión contigo. En CicloBaq, nos dedicamos a promover un estilo de vida
         activo, sostenible y saludable a través del ciclismo.
       </p>
+      {% if Email %}
+        <li class="items"><p id="email_index">{{Email}}</p></li>
+      {% else %}
+        <a href="/login">Iniciar Sesion</a>
+      {% endif %}
     </header>
 
     <section class="content ciclorutas">
@@ -98,8 +99,6 @@
             </li>
           </ul>
         </div>
-      </div>
     </div>
-    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
-  </body>
-</html>
+</div>
+{% endblock %}
