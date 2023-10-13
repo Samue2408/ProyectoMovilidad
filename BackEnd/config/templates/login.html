@@ -35,12 +35,16 @@
             ></a>
           </div>
           <span>Usa tu Correo Electronico para Registrarte</span>
-          <input type="text" placeholder="Nombre" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Contraseña" />
-          <input type="date" placeholder="fecha nacimiento" />
-          <input type="text" placeholder="genero" />
-          <button>Registrase</button>
+          <input type="text" id="name_r" placeholder="Nombre" />
+          <input type="email" id="email_r" placeholder="Email" />
+          <input type="password" id="password_r" placeholder="Contraseña" />
+          <select name="genero" id="genre_r">
+            <option value="" disabled selected>Genero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <button id="signup">Registrase</button>
         </form>
       </div>
       <div class="form-container sign-in">
@@ -57,10 +61,10 @@
             ></a>
           </div>
           <span>Ingresa con tu correo</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Contraseña" />
+          <input type="email" id="email_l" placeholder="Email" />
+          <input type="password" id="password_l" placeholder="Contraseña" />
           <a href="#">Olvidaste tu contraseña?</a>
-          <button>Iniciar Seccion</button>
+          <button id="signin">Iniciar Seccion</button>
         </form>
       </div>
       <div class="toggle-container">

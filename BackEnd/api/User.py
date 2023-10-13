@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request,json
+from flask import Blueprint, jsonify, request,json, redirect, url_for
 from config.db import db, app, ma
 from models.User import User, UserSchema
 
@@ -23,7 +23,7 @@ def saveuser():
     new_user = User(name, email, password, genre)
     db.session.add(new_user)
     db.session.commit()
-    return "Datos guardados con exitos"
+    return "Datos guardados exitosamente"
 
 @ruta_user.route("/updateuser", methods=["PUT"])
 def updateuser():
@@ -42,5 +42,17 @@ def deleteusuario(id):
     db.session.delete(user)
     db.session.commit()
     return jsonify(user_schema.dump(user))
- 
+
+@ruta_user.route("/signin", methods=["POST"])
+def signin():
+    email = request.json['email']
+    password = request.json['password']
+    user = db.session.query(User.id_user).filter(User.email == email, User.password == password).all()
+
+    result = users_schema.dump(user)
+
+    if len(result)>0:
+        return jsonify({'mensaje': 'Inicio de sesión exitoso'})
+    else:
+        return jsonify({'error': 'Credenciales incorrectas'}), 401
  

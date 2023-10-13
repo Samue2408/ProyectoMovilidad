@@ -21,7 +21,6 @@ app.register_blueprint(ruta_bikeways, url_prefix="/api")
 app.register_blueprint(ruta_alerts, url_prefix="/api")
 app.register_blueprint(ruta_RutpBkway, url_prefix="/api")
 
-
 @app.route("/")
 def index():
     return render_template('index.html')
@@ -41,6 +40,7 @@ def cicloruta():
 @app.route("/login")
 def login():
     return render_template('login.html')
+    
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host='0.0.0.0')

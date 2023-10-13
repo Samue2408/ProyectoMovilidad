@@ -93,7 +93,7 @@ body {
   height: 100%;
 }
 
-.container input {
+.container input, .container select {
   background-color: #eee;
   border: none;
   margin: 8px 0;

@@ -9,3 +9,65 @@ registerBtn.addEventListener("click", () => {
 loginBtn.addEventListener("click", () => {
   container.classList.remove("active");
 });
+
+document.getElementById("signup").addEventListener("click", function (event) {
+
+  const name = document.getElementById('name_r').value;
+  const email = document.getElementById('email_r').value;
+  const password = document.getElementById('password_r').value;
+  const genre = document.getElementById('genre_r').value;
+
+  if (name.trim() === '' || email.trim() === '' || password.trim() === '') {    
+    alert('Por favor, completa todos los campos y/o selecciona un género.');
+  } else if (genre.trim() === '') {    
+    alert('Por favor, selecciona un género.');
+  } else {    
+    const dataToSend = {
+      name: name,
+      email: email,
+      password: password,
+      genre: genre
+    };
+    fetch('/api/saveuser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dataToSend)
+    }) 
+    window.location.href = "/";
+  }  
+  event.preventDefault();
+}); 
+
+document.getElementById("signin").addEventListener("click", function (event) {
+  event.preventDefault();
+  const email = document.getElementById('email_l').value;
+  const password = document.getElementById('password_l').value;
+
+  const userData = {
+    email: email,
+    password: password
+  };
+
+  fetch('/api/signin', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert('error')
+      } else {
+        alert('Succesfull')           
+        // Realiza redirección o acciones adicionales después del inicio de sesión exitoso.
+      }            
+    })
+    .catch(error => console.error(error));
+    
+    //FALTA COMPROBAR QUE CUANDO TENGA BUENA LAS VALIDACIONES, LOS MANDE A PAGINA DE INICIO
+      
+});
