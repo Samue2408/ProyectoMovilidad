@@ -16,13 +16,11 @@ def bikeways():
 
 @ruta_bikeways.route("/savebikeway", methods=["POST"])
 def savebikeway():
-    id_spoints = request.json['id_spoints']
     name = request.json['name']
     description = request.json['description']
     initial_latitude_longitude = request.json['initial_latitude_longitude']
     final_latitude_longitude = request.json['final_latitude_longitude']
-    new_bikeway = Bike_ways(id_spoints, name, description, initial_latitude_longitude, final_latitude_longitude)
-    #new_bikeway = Bike_ways(name, description, initial_latitude_longitude, final_latitude_longitude)
+    new_bikeway = Bike_ways(name, description, initial_latitude_longitude, final_latitude_longitude)
     db.session.add(new_bikeway)
     db.session.commit()
     return "Datos guardados con exitos"
@@ -31,7 +29,6 @@ def savebikeway():
 def updatebikeway():
     id = request.json['id_bikeway']
     nbikeway = Bike_ways.query.get(id) #Select * from Cliente where id = id
-    nbikeway.id_spoints = request.json['id_spoints']
     nbikeway.name = request.json['name']
     nbikeway.description = request.json['description']
     nbikeway.initial_latitude_longitude = request.json['initial_latitude_longitude']

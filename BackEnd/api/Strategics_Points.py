@@ -16,12 +16,13 @@ def strategics_points():
 
 @ruta_strategics_points.route("/save_strategics_points", methods=["POST"])
 def save_strategics_points():
+    id_bikeway = request.json['id_bikeway']
     name = request.json['name']
     description = request.json['description']
     longitude = request.json['longitude']
     latitude = request.json['latitude']
     type = request.json['type']
-    new_strategics_points = StrategicsPoints(name, description, longitude, latitude, type)
+    new_strategics_points = StrategicsPoints(id_bikeway, name, description, longitude, latitude, type)
     db.session.add(new_strategics_points)
     db.session.commit()
     return "Datos guardados con exitos"
@@ -30,6 +31,7 @@ def save_strategics_points():
 def update_strategics_points():
     id = request.json['id_spoints']
     nstrategics_points = StrategicsPoints.query.get(id) #Select * from Cliente where id = id
+    nstrategics_points.id_bikeway = request.json['id_bikeway']
     nstrategics_points.name = request.json['name']
     nstrategics_points.description = request.json['description']
     nstrategics_points.longitude = request.json['longitude']

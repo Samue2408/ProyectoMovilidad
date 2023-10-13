@@ -5,9 +5,9 @@ from api.User import ruta_user
 from api.Community import ruta_community
 from api.Publications import ruta_publications
 from api.Usu_Com import ruta_usucom
+from api.BikeWays import ruta_bikeways
 from api.Strategics_Points import ruta_strategics_points
 from api.Routes import ruta_route
-from api.BikeWays import ruta_bikeways
 from api.Alerts import ruta_alerts
 from api.Rutp_Bkway import ruta_RutpBkway
 

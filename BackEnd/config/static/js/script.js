@@ -62,12 +62,10 @@ document.getElementById("signin").addEventListener("click", function (event) {
       if (data.error) {
         alert('error')
       } else {
-        alert('Succesfull')           
-        // Realiza redirección o acciones adicionales después del inicio de sesión exitoso.
+        alert('Succesfull')    
+        window.location.href = "/";       
       }            
     })
     .catch(error => console.error(error));
-    
-    //FALTA COMPROBAR QUE CUANDO TENGA BUENA LAS VALIDACIONES, LOS MANDE A PAGINA DE INICIO
-      
+          
 });
