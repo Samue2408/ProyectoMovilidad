@@ -25,7 +25,7 @@ function initMap() {
           position: userLocation,
           map: map,
           icon: {
-            url: ".././img/bisi.png", // Ruta a tu icono de marcador
+            url: "{{url_for('static', filename='../img/bisi.png')}}", // Ruta a tu icono de marcador
             scaledSize: new google.maps.Size(32, 32), // Tamaño personalizado del icono
           },
           title: "Tu ubicación",
