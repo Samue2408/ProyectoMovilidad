@@ -24,11 +24,8 @@
             <a href="/foro">Comunidad</a>
             <a href="/#contactanos">Contacto</a>
             <a href="/ciclorutas">Ciclorutas</a>
-            {% if Email %}
-                <p id="email_index">{{Email}}</p>
-            {% else %}
-                <a href="/login">Iniciar Sesion</a>
-            {% endif %}
+            <p id="email_index">{{Email}}</p>
+            <a href="/logout"><img src="../static/img/cerrar-sesion.png" alt="cerrar sesion"></a>
             </nav>
         </div>
     {% block body %}
