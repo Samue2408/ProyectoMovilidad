@@ -113,16 +113,24 @@ p {
 .mapa {
   background: #343c86;
   padding-top: 20px;
-  padding-bottom: 0;
+  padding-bottom: 50px;
 }
 .contenido-ter {
   background-color: var(--primario);
   display: flex;
+  align-items: center;
   border-radius: 1px;
+  justify-content: flex-end;
 }
 
 .contenido-ter .imagen-ter {
-  margin: 8px;
+  margin: 0 20px 0 0;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   border-radius: 13px;
 }
 
@@ -133,12 +141,14 @@ p {
 .contenido-ter .imagen-ter img {
   margin: 10px;
   border-radius: 500px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .contenido-ter .contactenos {
   color: #ffffff;
   margin-top: 30px;
-  margin-left: 130px;
+  margin-right: 130px;
 }
 
 .contactenos .titulo h1 {
