@@ -81,16 +81,14 @@ function initMap() {
           );
         });
 
-        document.getElementById("mode").addEventListener("change", () => {
-          calculateAndDisplayRoute(directionsService, directionsRenderer);
-        });
+        const calculateRouteButton = document.getElementById("calculate-route");
 
-        // Calcular y mostrar la ruta inicial desde la ubicación del usuario
-        calculateAndDisplayRoute(
-          directionsService,
-          directionsRenderer,
-          userLocation
-        );
+        // Agregar un evento de clic al botón de calcular ruta
+        calculateRouteButton.addEventListener("click", function() {
+          const origin = fromInput.value;
+          const destination = toInput.value;
+          calculateAndDisplayRoute(directionsService, directionsRenderer, origin, destination);
+        });
       },
       () => {
         alert("Error al obtener la ubicación del usuario.");
@@ -104,12 +102,10 @@ function initMap() {
 function calculateAndDisplayRoute(
   directionsService,
   directionsRenderer,
-  selectedLocation
+  origin,
+  destination
 ) {
-  const selectedMode = document.getElementById("mode").value;
-  const origin = selectedLocation || document.getElementById("from").value;
-  const destination = document.getElementById("to").value;
-
+  const selectedMode = "WALKING"; // Modo de viaje: Caminar
   directionsService
     .route({
       origin: origin,

@@ -4,37 +4,29 @@
 
 {% block styles %}
 <link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/style_mapa.css') }}"
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/style_mapa.css') }}"
 />
 <link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/normalize.css') }}"
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/normalize.css') }}"
 />
 {% endblock %}
 
-
 {% block body %}
-    <div id="menu_flotant">
-      <div>
-        <div>
-          <input type="text" id="from" placeholder="Origen" />
-        </div>
-      </div>
-      <div>
-        <div>
-          <input type="text" id="to" placeholder="Destino" />
-        </div>
-      </div>
-      <b>modo de viaje</b>
-      <select id="mode" class="select-menu">
-        <option value="DRIVING">Bisicleta</option>
-        <option value="WALKING">Bisicleta</option>
-        <option value="BICYCLING">Bisicleta ciclo</option>
-      </select>
-    </div>
-
-    <div id="map"></div>
+<div id="menu-lateral">
+  <h1>Donde quieres ir?</h1>
+  <div>
+    <label for="from">Origen:</label>
+    <input type="text" id="from" placeholder="Origen" />
+  </div>
+  <div>
+    <label for="to">Destino:</label>
+    <input type="text" id="to" placeholder="Destino" />
+  </div>
+  <button id="calculate-route">Calcular Ruta</button>
+</div>
+<div id="map"></div>
 {% endblock %}
 
 {% block scripts %}
@@ -42,7 +34,5 @@ href="{{ url_for('static', filename='css/normalize.css') }}"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIofybiA_5qI7G4YH2u336yZkm94EE4aM&libraries=places&callback=initMap"
       defer
     ></script>
-    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-{% endblock %} 
-
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
