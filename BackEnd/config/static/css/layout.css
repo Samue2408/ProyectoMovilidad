@@ -20,7 +20,7 @@
   @media (min-width: 480px) {
     .navegacion-principal {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
     }
   }
   .navegacion-principal a {

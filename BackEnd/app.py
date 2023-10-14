@@ -31,14 +31,14 @@ def index():
 @app.route("/mapa")
 def mapa():
     if 'email' in session:
-        return render_template('mapa.html')
+        return render_template('mapa.html', Email= session['email'])
     else:
         return redirect(url_for('login'))
 
 @app.route("/foro")
 def comunidad():
     if 'email' in session:
-        return render_template('foro.html')
+        return render_template('foro.html', Email= session['email'])
     else:
         return redirect(url_for('login'))
     
@@ -46,7 +46,7 @@ def comunidad():
 @app.route("/ciclorutas")
 def cicloruta():
     if 'email' in session:
-        return render_template('ciclorutas.html')
+        return render_template('ciclorutas.html', Email= session['email'])
     else:
         return redirect(url_for('login'))
 
