@@ -54,10 +54,6 @@ def logout():
     session.clear()
     return redirect(url_for('login'))
 
-@app.route("/prueba")
-def prueba():
-    return render_template('login2.html')
-
 def pagina_no_encontrada(error):
     return render_template('404.html'), 404
 
