@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Página no encontrada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/NoFound.css') }}">  <!–- Al estar utilizando Jinja2 se hace de otra manera para llamar al archivo css ––>
+</head>
+<body>
+    <h1>Error 404</h1>
+    <p>Página no encontrada</p>
+    <img src="../static/img/robot_opss.png" alt="">  
+    <a href="/">Volver a la página principal</a>
+</body>
+</html>
