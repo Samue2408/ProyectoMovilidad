@@ -60,3 +60,15 @@ body {
 #ciclorutas-container li {
   margin-bottom: 10px;
 }
+@media (max-width: 872px) {
+  .navegacion-principal {
+    height: auto; /* Establece la altura del menú según su contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secundario);
+    border-radius: 10px;
+    margin: 8px;
+  }
+}
