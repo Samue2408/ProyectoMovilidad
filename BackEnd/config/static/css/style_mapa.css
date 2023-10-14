@@ -64,3 +64,31 @@ body {
   margin-bottom: 10px; /* Agrega espacio entre los inputs */
   border-radius: 10px;/*borde de los textos*/
 }
+@media (max-width: 768px) {
+  #menu-lateral {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    position: relative;
+  }
+
+  #map {
+    margin-left: 0;
+  }
+
+  #menu-lateral input {
+    height: 30px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 576px) {
+  .title {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .navegacion-principal a {
+    padding: 0.5rem 0.8rem;
+  }
+}
