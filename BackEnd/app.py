@@ -27,19 +27,28 @@ def index():
         return redirect(url_for('principal'))
     else:
         return redirect(url_for('login'))
-    
 
 @app.route("/mapa")
 def mapa():
-    return render_template('mapa.html')
+    if 'email' in session:
+        return render_template('mapa.html')
+    else:
+        return redirect(url_for('login'))
 
 @app.route("/foro")
 def comunidad():
-    return render_template('foro.html')
+    if 'email' in session:
+        return render_template('foro.html')
+    else:
+        return redirect(url_for('login'))
+    
 
 @app.route("/ciclorutas")
 def cicloruta():
-    return render_template('ciclorutas.html')
+    if 'email' in session:
+        return render_template('ciclorutas.html')
+    else:
+        return redirect(url_for('login'))
 
 @app.route("/login")
 def login():
@@ -47,7 +56,10 @@ def login():
     
 @app.route("/principal")
 def principal():
-    return render_template('index.html', Email= session['email'])
+    if 'email' in session:
+        return render_template('index.html', Email= session['email'])
+    else:
+        return redirect(url_for('login'))
 
 @app.route("/logout")
 def logout():
