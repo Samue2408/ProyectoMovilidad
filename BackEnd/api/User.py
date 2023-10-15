@@ -30,7 +30,7 @@ def saveuser():
         db.session.commit()
         return jsonify({'mensaje': 'Registro exitoso'})
     else:
-        return jsonify({'error': 'El email ya está en uso'}), 401
+        return jsonify({'error': 'Opss...'}), 401
  
 
 
@@ -62,7 +62,7 @@ def signin():
 
     if len(result)>0:
         session['email'] = email
-        return jsonify({'mensaje': 'Inicio de sesión exitoso'})
+        return jsonify({'mensaje': 'Bienvenido'})
     else:
-        return jsonify({'error': 'Credenciales incorrectas'}), 401
+        return jsonify({'error': 'Opss...'}), 401
  

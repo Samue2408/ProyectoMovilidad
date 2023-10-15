@@ -20,21 +20,20 @@ body {
 
 .navegacion-principal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   height: 57px;
 }
 
 .navegacion-principal a {
-  max-height: 32px;
+  max-height: 43px;
   padding: 1rem;
   color: var(--blanco);
   text-decoration: none;
   font-size: 2rem;
   font-weight: 700;
   border-radius: 20px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .navegacion-principal a:hover {
@@ -42,11 +41,11 @@ body {
   color: var(--blanco);
 }
 
-@media (min-width: 873px) {
-  .navegacion-principal {
-    flex-direction: row;
-  }
+#close_ss {
+ height: 25px;
 }
+
+
 
 /* Agregar estilos para pantallas más pequeñas aquí */
 @media (max-width: 872px) {
@@ -54,6 +53,9 @@ body {
     font-size: 1.5rem; /* Ajustar el tamaño de fuente para pantallas más pequeñas */
     padding: 0.5rem 1rem; /* Ajustar el relleno para pantallas más pequeñas */
   }
+  #close_ss {
+    height: 20px;
+   }
 }
 
 /* Agregar estilos para pantallas aún más pequeñas aquí */
@@ -62,4 +64,7 @@ body {
     font-size: 1.2rem; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
     padding: 0.5rem 0.8rem; /* Ajustar el relleno para pantallas muy pequeñas */
   }
+  #close_ss {
+    height: 15px;
+   }
 }

@@ -41,12 +41,35 @@ document.getElementById("signup").addEventListener("click", function (event) {
     .then(data => {
       if (data.error) {
         Swal.fire({
-          title: data.error
+          title: data.error,
+          text: 'Ingresa otra direccion de correo electronico',
+          footer: '<p>Si ya tienes una cuenta, por favor <a href="/login">inicia sesión.</a></p>',
+          icon: 'error',
+          backdrop: false,
+          timer: 7000,
+          timerProgressBar: true,
+        
+          //Animacion personalizada
+
+          //showClass: {
+          //  popup: 'animate__animated animate__fadeInDown'
+          //},
+          //hideClass: {
+          //  popup: 'animate__animated animate__fadeOutUp'
+          //}
         })
       } else {
-        alert(data.mensaje)
-        window.location.href = "/login";       
-      }            
+        Swal.fire({
+          title: data.mensaje,
+          text: 'Un gusto tenerte con nosotros',
+          icon: 'success',
+          backdrop: false,
+          timer: 3500,
+        }).then((result) => {
+          window.location.href = "/login";
+        });       
+      }  
+            
     })
     .catch(error => console.error(error));
   }  
@@ -73,10 +96,25 @@ document.getElementById("signin").addEventListener("click", function (event) {
     .then(response => response.json())
     .then(data => {
       if (data.error) {
-        alert('error')
+        Swal.fire({
+          title: data.error,
+          text: 'Credenciales incorrectas',
+          footer: '<p>Si has <a href="/hidden_pw">olvidado tu contraseña</a>, puedes restablecerla</p>',
+          icon: 'error',
+          backdrop: false,
+          timer: 7000,
+          timerProgressBar: true,
+        })
       } else {
-        alert('Succesfull')    
-        window.location.href = "/";       
+        Swal.fire({
+          title: data.mensaje,
+          text: 'Inicio de sesión exitoso',
+          icon: 'success',
+          backdrop: false,
+          timer: 3500,
+        }).then((result) => {
+          window.location.href = "/";
+        });           
       }            
     })
     .catch(error => console.error(error));
