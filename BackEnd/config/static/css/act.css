@@ -55,4 +55,14 @@ p {
     margin-bottom: 10px;
 }
 
+/* Estilos para el formulario */
+#update-form {
+    margin-top: 20px;
+}
+
+/* Estilos para el campo "Género" */
+#genre {
+    width: 100%;
+}
+
 /* Otras etiquetas o elementos que desees personalizar */

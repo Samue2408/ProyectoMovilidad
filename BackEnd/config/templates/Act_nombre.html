@@ -2,23 +2,34 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/act.css') }}"
+    />
     <title>Perfil de Usuario</title>
 </head>
 <body>
     <h1>Perfil de Usuario</h1>
+    
     <form id="update-form">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="{{ user.name }}" required>
+        <input type="text" id="nombre" name="nombre" value="{{ User.name }}" required>
         <br>
         <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" value="{{ user.password }}" required>
+        <input type="password" id="contrasena" name="contrasena" value="{{ User.password }}" required>
+        <br>
+        <label for="email">Correo:</label>
+        <input type="text" id="email" name="email" value="{{ User.email }}" required>
+        <br>
+        <label for="genre">Género:</label>
+        <input type="text" id="genre" name="genre" value="{{ User.genre }}" required>
         <br>
         <input type="submit" value="Guardar Cambios">
+
     </form>
-    <p>Correo: {{ user.email }}</p>
-    <p>Fecha de Ingreso: {{ user.regis_date }}</p>
-    <p>Género: {{ user.genre }}</p>
+    <p>Correo: {{ User.email }}</p>
+    <p>Fecha de Ingreso: {{ User.regis_date }}</p>
+    <p>Género: {{ User.genre }}</p>
 </body>
-<script src="script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </html>
