@@ -1,39 +1,65 @@
-:host {
-    display: block;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    background-color: var(--secundario);
-    z-index: 1000;
-  }
-  .form-container {
-    margin-top:0;
-  }
-  .nav-bg {
-    background-color: var(--secundario);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  }
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 57px;
+}
+
+.navegacion-principal a {
+  max-height: 32px;
+  padding: 1rem;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navegacion-principal a:hover {
+  background-color: #60548A;
+  color: var(--blanco);
+}
+
+@media (min-width: 873px) {
   .navegacion-principal {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
-  @media (min-width: 480px) {
-    .navegacion-principal {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
+}
+
+/* Agregar estilos para pantallas más pequeñas aquí */
+@media (max-width: 872px) {
   .navegacion-principal a {
-    padding: 1rem;
-    color: var(--blanco);
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.5rem; /* Ajustar el tamaño de fuente para pantallas más pequeñas */
+    padding: 0.5rem 1rem; /* Ajustar el relleno para pantallas más pequeñas */
   }
-  .navegacion-principal a:hover {
-    background-color: var(--primario);
-    color: var(--blanco);
+}
+
+/* Agregar estilos para pantallas aún más pequeñas aquí */
+@media (max-width: 576px) {
+  .navegacion-principal a {
+    font-size: 1.2rem; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+    padding: 0.5rem 0.8rem; /* Ajustar el relleno para pantallas muy pequeñas */
   }
-  .imag {
-    width: 100%;
-  }
+}

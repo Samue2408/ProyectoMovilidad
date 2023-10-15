@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
     <link
       rel="icon"
@@ -17,14 +17,13 @@
 </head>
 <body>
         <div class="nav-bg">
-            <img class="imag" src="../static/img/bisi.png" />
             <nav class="navegacion-principal contenedor">
-            <a href="/">Pagina principal</a>
+            <a href="/">principal</a>
             <a href="/mapa">Mapa</a>
             <a href="/foro">Comunidad</a>
             <a href="/#contactanos">Contacto</a>
             <a href="/ciclorutas">Ciclorutas</a>
-            <p id="email_index">{{Email}}</p>
+            <a href="/">{{Email}}</a>
             <a href="/logout"><img src="../static/img/cerrar-sesion.png" alt="cerrar sesion"></a>
             </nav>
         </div>

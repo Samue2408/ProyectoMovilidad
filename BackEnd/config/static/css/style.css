@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
   --blanco: #ffffff;
   --oscuro: #212121;
@@ -13,62 +19,39 @@
   --correo-i: #ff4c88;
   --correo-j: #cb0ab8;
 }
+
 html {
   font-size: 62.5%;
-  box-sizing: inherit;
+  background-color: rgb(98, 83, 74);
 }
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+
 body {
   font-size: 16px;
   text-align: center;
-  font-family: "Krub", sans-serif;
+  background: linear-gradient(to right, rgb(98, 83, 74), rgb(99, 93, 85));
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="%236f32be" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 19l0 -4l-3 -3l5 -4l2 3l3 0" /><path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>'),
-    auto;
-  background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  auto;
 }
+
 #ciclorutas-container.with-margin {
   margin-top: 50px;
 }
 
-h1 {
-  font-size: 3.8rem;
-}
-h2 {
-  font-size: 2.8rem;
-}
-h3 {
-  font-size: 1.8rem;
-}
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   text-align: center;
 }
-.imag {
-  width: 9%;
-  height: auto;
-}
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .header {
   height: 60vh !important;
   background: linear-gradient(rgba(47, 50, 57, 0.75), rgba(32, 35, 42, 0.219)),
     url("../img/bisi.webp") no-repeat center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 .title {
   margin-bottom: 40px;
   font-size: 60px;
@@ -76,12 +59,14 @@ h3 {
   text-transform: uppercase;
   color: #fff;
 }
+
 p {
   margin-bottom: 40px;
   font-size: 18px;
   color: #ffffff;
   padding: 0 100px;
 }
+
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -91,8 +76,14 @@ p {
   text-decoration: none;
   background: #9c27b0;
 }
+
 .btn:hover {
   background: none;
+}
+
+.imag {
+  width: 9%;
+  height: auto;
 }
 
 .content {
@@ -102,10 +93,12 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .ciclorutas {
   padding: 30px;
   background: #20325c;
 }
+
 .ciclorutas .imag {
   width: 80%;
 }
@@ -119,191 +112,141 @@ p {
   background-color: var(--primario);
   display: flex;
   align-items: center;
-  border-radius: 1px;
-  justify-content: flex-end;
+  border-radius: 13px;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 .contenido-ter .imagen-ter {
-  margin: 0 20px 0 0;
-  margin: auto;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 13px;
-}
-
-.imagen-ter img {
-  width: 80%;
+  margin-right: 20px;
 }
 
 .contenido-ter .imagen-ter img {
-  margin: 10px;
-  border-radius: 500px;
+  border-radius: 50%;
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
 }
 
-.contenido-ter .contactenos {
+.contactenos {
   color: #ffffff;
-  margin-top: 30px;
-  margin-right: 130px;
+  max-width: 300px;
 }
 
-.contactenos .titulo h1 {
-  font-size: 50px;
-  justify-content: center;
-}
-
-@import url("https://fons.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap");
 .redesS {
-  font-family: "Poppins", sans-serif;
-  width: 300px;
-  height: 350px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin-left: 100px;
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-ul {
-  position: relative;
-  gap: 25px;
+.redesS ul {
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
-/* ---------------- Circulos de los Iconos --------*/
-.redes li {
+.redesS ul li {
   position: relative;
   background-color: rgba(255, 251, 0, 0.978);
-  margin: 15px;
   list-style: none;
   width: 60px;
   height: 60px;
-  border-radius: 60px;
+  border-radius: 50%;
   cursor: pointer;
-}
-
-.redes li:hover {
-  width: 180px;
-}
-
-.icono {
+  transition: width 0.5s;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset -5px -5px rgba(0, 0, 0, 0.2), 0px -5px rgba(0, 0, 0, 0.2),
-    5px -5px rgba(0, 0, 0, 0.2), 5px 0px rgba(0, 0, 0, 0.2),
-    5px 5px rgba(0, 0, 0, 0.2), 0px 5px rgba(0, 0, 0, 0.2),
-    -5px 5px rgba(0, 0, 0, 0.2), -5px 0px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
 }
 
-.icono:hover {
-  box-shadow: inset -10px -10px rgba(0, 0, 0, 0.2),
-    -10px -10px rgba(0, 0, 0, 0.2), -10px 10px rgba(0, 0, 0, 0.2),
-    10px -10px rgba(0, 0, 0, 0.2), 10px 10px rgba(0, 0, 0, 0.2);
+.redesS ul li:hover {
+  width: 120px;
 }
 
-/*--aqui se hacen los efectos de los colores de los iconos--*/
-.redes li::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50px;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.redes li:hover::before {
-  opacity: 1;
-}
-
-.redes li::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  height: 100%;
-  border-radius: 60px;
-  opacity: 0;
-  transition: 0.5s;
-  z-index: -1;
-}
-
-.redes li:hover::before {
-  opacity: 0.5s;
-}
-
-.redes li i {
+.redesS ul li i {
   font-size: 1.75em !important;
   transition: 0.5s;
   transition-delay: 0.25s;
-  margin-top: 17px;
 }
-
-.redes li:hover i {
-  transform: scale(0);
-  font-size: 1.75em;
-  transition-delay: 0.25s;
-}
-
-.redes li span {
-  position: absolute;
-}
-
-/*--TITULOS DENTRO DEL CIRCULO--*/
 .redesS ul li .titulo {
-  font-family: "Po";
-  color: #ffffff;
-  font-size: 1.1em !important;
-  margin-top: 20px;
-  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #012c49;
+  font-size: 1.1em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transform: scale(0);
   transition: 0.5s;
   transition-delay: 0s;
-  font-family: "Poppins", sans-serif;
 }
 
-.redes li:hover .titulo {
+.redesS ul li:hover .titulo {
   transform: scale(1);
   transition-delay: 0.25s;
 }
-
-.facebook::before {
-  background: linear-gradient(45deg, var(--facebook-i), var(--facebook-j));
+@media (max-width: 872px) {
+  .navegacion-principal {
+    height: auto; /* Establece la altura del menú según su contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secundario);
+    border-radius: 10px;
+    margin: 8px;
+  }
 }
 
-.facebook::after {
-  background: linear-gradient(45deg, var(--facebook-i), var(--facebook-j));
-  filter: blur(15px);
-}
+@media (max-width: 576px) {
+  .header {
+    height: 40vh; /* Ajusta la altura de la imagen para pantallas pequeñas */
+  }
+  .title {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .navegacion-principal a {
+    padding: 0.5rem 0.8rem;
+  }
+  .contactenos h1 {
+    font-size: 1.5rem;
+  }
 
-.twitter::before {
-  background: linear-gradient(45deg, var(--twitter-i), var(--twitter-j));
-}
+  .redesS ul li {
+    width: 30px;
+    height: 30px;
+  }
 
-.twitter::after {
-  background: linear-gradient(45deg, var(--twitter-i), var(--twitter-j));
-  filter: blur(15px);
-}
-
-.linkedin::before {
-  background: linear-gradient(45deg, var(--linkedin-i), var(--linkedin-j));
-}
-
-.linkedin::after {
-  background: linear-gradient(45deg, var(--linkedin-i), var(--linkedin-j));
-  filter: blur(15px);
-}
-
-.correo::before {
-  background: linear-gradient(45deg, var(--correo-i), var(--correo-j));
-}
-
-.correo::after {
-  background: linear-gradient(45deg, var(--correo-i), var(--correo-j));
-  filter: blur(15px);
+  .redesS ul li i {
+    font-size: 1em;
+  }
+  .redesS ul li:hover {
+    width: 100px;
+  }
+  .redesS ul li:hover::before {
+    opacity: 0;
+  }
+  .redesS ul li .titulo {
+    font-size: 0.5em;
+  }
+  .redesS ul li:hover .titulo {
+    transform: scale(1);
+  }
+  .navegacion-principal {
+    height: auto; /* Establece la altura del menú según su contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secundario);
+    border-radius: 10px;
+    margin: 8px;
+  }
+ 
+  
 }
