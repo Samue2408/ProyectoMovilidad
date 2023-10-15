@@ -39,7 +39,18 @@ document.getElementById("signup").addEventListener("click", function (event) {
       },
       body: JSON.stringify(dataToSend)
     }) 
-    window.location.href = "/login";
+    .then(response => response.json())  
+    .then(data => {
+      if (data.error) {
+        Swal.fire({
+          title: data.error
+        })
+      } else {
+        alert(data.mensaje)
+        window.location.href = "/login";       
+      }            
+    })
+    .catch(error => console.error(error));
   }  
   event.preventDefault();
 }); 

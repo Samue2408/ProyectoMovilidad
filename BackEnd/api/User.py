@@ -20,10 +20,19 @@ def saveuser():
     email = request.json['email']
     password = request.json['password']
     genre = request.json['genre']
-    new_user = User(name, email, password, genre)
-    db.session.add(new_user)
-    db.session.commit()
-    return "Datos guardados exitosamente"
+    user = db.session.query(User.id_user).filter(User.email == email).all()
+    
+    result = users_schema.dump(user)
+
+    if len(result)==0:
+        new_user = User(name, email, password, genre)
+        db.session.add(new_user)
+        db.session.commit()
+        return jsonify({'mensaje': 'Registro exitoso'})
+    else:
+        return jsonify({'error': 'El email ya está en uso'}), 401
+ 
+
 
 @ruta_user.route("/updateuser", methods=["PUT"])
 def updateuser():
