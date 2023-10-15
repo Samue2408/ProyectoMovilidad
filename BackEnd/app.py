@@ -27,19 +27,28 @@ def index():
         return redirect(url_for('principal'))
     else:
         return redirect(url_for('login'))
-    
 
 @app.route("/mapa")
 def mapa():
-    return render_template('mapa.html')
+    if 'email' in session:
+        return render_template('mapa.html', Email= session['email'])
+    else:
+        return redirect(url_for('login'))
 
 @app.route("/foro")
 def comunidad():
-    return render_template('foro.html')
+    if 'email' in session:
+        return render_template('foro.html', Email= session['email'])
+    else:
+        return redirect(url_for('login'))
+    
 
 @app.route("/ciclorutas")
 def cicloruta():
-    return render_template('ciclorutas.html')
+    if 'email' in session:
+        return render_template('ciclorutas.html', Email= session['email'])
+    else:
+        return redirect(url_for('login'))
 
 @app.route("/login")
 def login():
@@ -47,38 +56,16 @@ def login():
     
 @app.route("/principal")
 def principal():
-    return render_template('index.html', Email= session['email'])
+    if 'email' in session:
+        return render_template('index.html', Email= session['email'])
+    else:
+        return redirect(url_for('login'))
 
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect(url_for('login'))
 
-# Ruta para mostrar el perfil del usuario
-@app.route('/perfil_usuario/<int:user_id>', methods=['GET', 'POST'])
-def perfil_usuario(user_id):
-    conn = app.connect('mi_base_de_datos.db')
-    cursor = conn.cursor()
-
-    if request.method == 'POST':
-        nuevo_nombre = request.form['nombre']
-        nueva_contrasena = request.form['contrasena']
-
-        # Actualizar el nombre y la contraseña en la base de datos
-        cursor.execute("UPDATE usuarios SET nombre = ?, contrasena = ? WHERE id = ?",
-            (nuevo_nombre, nueva_contrasena, user_id))
-        conn.commit()
-
-    cursor.execute("SELECT nombre, correo, fecha_ingreso, genero FROM usuarios WHERE id = ?", (user_id,))
-    user_info = cursor.fetchone()
-
-    conn.close()
-
-    return render_template('perfil_usuario.html', user_info=user_info)
-
-@app.route("/prueba")
-def prueba():
-    return render_template('Act_nombre.html')
 
 def pagina_no_encontrada(error):
     return render_template('404.html'), 404

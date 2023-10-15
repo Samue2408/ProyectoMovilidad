@@ -1,21 +1,26 @@
-{% extends './layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-{% block title %}Mapa{% endblock %}
-<<<<<<< HEAD
-
-{% block styles %}
-<link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/style_mapa.css') }}"
-/>
-<link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/normalize.css') }}"
-/>
-{% endblock %}
-
-
-{% block body %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style_mapa.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bike' width='20' height='20' viewBox='0 0 24 24' stroke-width='3' stroke='%236f32be' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M12 19l0 -4l-3 -3l5 -4l2 3l3 0' /><path d='M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /></svg>"
+    />
+    <title>Mapa</title>
+  </head>
+  <my-menu></my-menu>
+  <div id="ciclorutas-container" class="with-margin"></div>
+  <body>
     <div id="menu_flotant">
       <div>
         <div>
@@ -36,47 +41,11 @@ href="{{ url_for('static', filename='css/normalize.css') }}"
     </div>
 
     <div id="map"></div>
-=======
-
-{% block styles %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/style_mapa.css') }}"
-/>
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/normalize.css') }}"
-/>
-{% endblock %}
-
-{% block body %}
-<div id="menu-lateral">
-  <h1>Donde quieres ir?</h1>
-  <div>
-    <label for="from">Origen:</label>
-    <input type="text" id="from" placeholder="Origen" />
-  </div>
-  <div>
-    <label for="to">Destino:</label>
-    <input type="text" id="to" placeholder="Destino" />
-  </div>
-  <button id="calculate-route">Calcular Ruta</button>
-</div>
-<div id="map"></div>
->>>>>>> 72bf0416b8b91fc35a2f22a015cea2cbfcb2110c
-{% endblock %}
-
-{% block scripts %}
-<script
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIofybiA_5qI7G4YH2u336yZkm94EE4aM&libraries=places&callback=initMap"
       defer
     ></script>
-<<<<<<< HEAD
     <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-{% endblock %} 
-
-=======
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-{% endblock %}
->>>>>>> 72bf0416b8b91fc35a2f22a015cea2cbfcb2110c
+  </body>
+</html>
