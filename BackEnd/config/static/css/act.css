@@ -1,4 +1,25 @@
 /* Estilos generales */
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #00ced1;
+    --secundario: #ae97f9;
+    --gris: #757575;
+    --facebook-i: #030543;
+    --facebook-j: #2900f4;
+    --twitter-i: #00bfff;
+    --twitter-j: #006eff;
+    --linkedin-i: #057eff;
+    --linkedin-j: #091e92;
+    --correo-i: #ff4c88;
+    --correo-j: #cb0ab8;
+}
+
+html {
+    font-size: 55%;
+    box-sizing: inherit;
+  }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;

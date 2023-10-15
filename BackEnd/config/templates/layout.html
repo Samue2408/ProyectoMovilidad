@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit=no">
-    <title>{% block title %}{% endblock %}</title>
+    <title>CicloBaq | {% block title %}{% endblock %}</title>
     <link
       rel="icon"
       href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bike' width='20' height='20' viewBox='0 0 24 24' stroke-width='3' stroke='%236f32be' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0' /><path d='M12 19l0 -4l-3 -3l5 -4l2 3l3 0' /><path d='M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /></svg>"
     />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/layout.css') }}"
-    />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+     
     {% block styles %}
     {% endblock %}
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/layout.css') }}"
+  /> 
 </head>
 <body>
         <div class="nav-bg">
@@ -24,7 +24,7 @@
             <a href="/foro">Comunidad</a>
             <a href="/#contactanos">Contacto</a>
             <a href="/ciclorutas">Ciclorutas</a>
-            <a href="/">{{Email}}</a>
+            <a href="/prueba">{{Email}}</a>
             <a href="/logout"><img src="../static/img/cerrar-sesion.png" alt="cerrar sesion" id="close_ss"></a>
             </nav>
         </div>
@@ -33,6 +33,5 @@
 
     {% block scripts %}
     {% endblock %}    
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </body>
 </html>

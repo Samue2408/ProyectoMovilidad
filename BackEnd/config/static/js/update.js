@@ -3,6 +3,10 @@ const updateForm = document.getElementById("update-form");
 const nombreInput = document.getElementById("nombre");
 const contrasenaInput = document.getElementById("contrasena");
 
+
+
+
+
 // Agregar un evento de envío al formulario
 updateForm.addEventListener("submit", function(event) {
     event.preventDefault(); // Evitar la recarga de la página por defecto

@@ -30,18 +30,14 @@ def saveuser():
         db.session.commit()
         return jsonify({'mensaje': 'Registro exitoso'})
     else:
-        return jsonify({'error': 'Opss...'}), 401
- 
-
+        return jsonify({'error': 'Opss...'}), 401 
 
 @ruta_user.route("/updateuser", methods=["PUT"])
 def updateuser():
     id = request.json['id_user']    
     nuser = User.query.get(id) #Select * from Cliente where id = id
     nuser.name = request.json['name']
-    nuser.email = request.json['email']
     nuser.password = request.json['password']
-    nuser.genre = request.json['genre']
     db.session.commit()
     return "Datos Actualizado con exitos"
 
@@ -56,12 +52,17 @@ def deleteusuario(id):
 def signin():
     email = request.json['email']
     password = request.json['password']
-    user = db.session.query(User.id_user).filter(User.email == email, User.password == password).all()
+    user = db.session.query(User.genre, User.name).filter(User.email == email, User.password == password).all()
     
     result = users_schema.dump(user)
 
     if len(result)>0:
+        usuario = result[0]
         session['email'] = email
+        session['name'] = usuario['name']
+        session['password'] = password
+        session['genre'] = usuario['genre'] 
+        print(email, usuario['name'], password, usuario['genre'])       
         return jsonify({'mensaje': 'Bienvenido'})
     else:
         return jsonify({'error': 'Opss...'}), 401
