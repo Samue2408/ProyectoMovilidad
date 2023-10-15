@@ -13,13 +13,12 @@
 }
 
 html {
-  font-size: 62.5%;
-  box-sizing: inherit;
+  font-size: 55%;
 }
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
