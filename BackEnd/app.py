@@ -70,7 +70,9 @@ def logout():
 def pagina_no_encontrada(error):
     return render_template('404.html'), 404
 
-
+@app.route("/prueba")
+def prueba():
+    return render_template('Act_nombre.html')
 
 if __name__ == "__main__":
     app.register_error_handler(404,pagina_no_encontrada)

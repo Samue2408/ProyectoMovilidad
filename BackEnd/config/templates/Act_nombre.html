@@ -2,23 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/act.css') }}">
+    <link rel="stylesheet" href="styles.css">
     <title>Perfil de Usuario</title>
 </head>
 <body>
     <h1>Perfil de Usuario</h1>
-    <form method="POST">
+    <form id="update-form">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="{{ user_info[0] }}" required>
+        <input type="text" id="nombre" name="nombre" value="{{ user.name }}" required>
         <br>
         <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" value="{{ user_info[1] }}" required>
+        <input type="password" id="contrasena" name="contrasena" value="{{ user.password }}" required>
         <br>
         <input type="submit" value="Guardar Cambios">
     </form>
-    <p>Correo: {{ user_info[2] }}</p>
-    <p>Fecha de Ingreso: {{ user_info[3] }}</p>
-    <p>Género: {{ user_info[4] }}</p>
+    <p>Correo: {{ user.email }}</p>
+    <p>Fecha de Ingreso: {{ user.regis_date }}</p>
+    <p>Género: {{ user.genre }}</p>
 </body>
+<script src="script.js"></script>
 </html>
