@@ -1,5 +1,5 @@
 from flask import Flask, redirect, jsonify, render_template, request, session, url_for
-from config.db import app
+from config.db import app, db
 
 from api.User import ruta_user
 from api.Community import ruta_community
@@ -70,9 +70,25 @@ def logout():
 def pagina_no_encontrada(error):
     return render_template('404.html'), 404
 
-@app.route("/prueba")
-def prueba():
-    return render_template('Act_nombre.html')
+@app.route("/prueba/<int:user_id>", methods=['GET', 'POST'])
+def prueba(user_id):
+    conn = db.connect('db.py')
+    cursor = conn.cursor()
+
+    if request.method == 'POST':
+        nuevo_nombre = request.form['nombre']
+        nueva_contrasena = request.form['contrasena']
+
+        cursor.execute("UPDATE usuarios SET nombre = ?, contrasena = ? WHERE id = ?",
+                       (nuevo_nombre, nueva_contrasena, user_id))
+        conn.commit()
+
+    cursor.execute("SELECT name, email, password, regis_date, genre FROM User WHERE id_user = ?", (user_id,))
+    user_info = cursor.fetchone()
+
+    conn.close()
+
+    return render_template('Act_nombre.html', User=user_info)
 
 if __name__ == "__main__":
     app.register_error_handler(404,pagina_no_encontrada)
