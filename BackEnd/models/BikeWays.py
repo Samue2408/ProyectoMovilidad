@@ -18,11 +18,11 @@ class Bike_ways(db.Model):
 
 def agregar_producto(nombre, descripcion, inicial_latitud_longitud, final_latitud_longitud):
     # Verificar si ya existe un registro con el mismo nombre
-    producto_existente = Bike_ways.query.filter_by(name=nombre).first()
-    if producto_existente is None:
+    ciclo_existente = Bike_ways.query.filter_by(name=nombre).first()
+    if ciclo_existente is None:
         # Si no existe, agrega el nuevo producto
-        nuevo_producto = Bike_ways(name=nombre, description=descripcion, initial_latitude_longitude=inicial_latitud_longitud, final_latitude_longitude=final_latitud_longitud)
-        db.session.add(nuevo_producto)
+        nuevo_bikeways = Bike_ways(name=nombre, description=descripcion, initial_latitude_longitude=inicial_latitud_longitud, final_latitude_longitude=final_latitud_longitud)
+        db.session.add(nuevo_bikeways)
     
 
 with app.app_context():

@@ -20,7 +20,7 @@ body {
 
 .navegacion-principal {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 57px;
@@ -34,6 +34,13 @@ body {
   font-size: 2rem;
   font-weight: 700;
   border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@media (min-width: 873px) {
+  .navegacion-principal {
+    flex-direction: row;
+  }
 }
 
 .navegacion-principal a:hover {
@@ -45,13 +52,14 @@ body {
  height: 25px;
 }
 
-
-
 /* Agregar estilos para pantallas más pequeñas aquí */
 @media (max-width: 872px) {
   .navegacion-principal a {
     font-size: 1.5rem; /* Ajustar el tamaño de fuente para pantallas más pequeñas */
     padding: 0.5rem 1rem; /* Ajustar el relleno para pantallas más pequeñas */
+  }
+  .navegacion-principal {
+    height: 200px;
   }
   #close_ss {
     height: 20px;

@@ -27,6 +27,10 @@ body {
     padding: 0;
 }
 
+fieldset{
+    border: 0;
+}
+
 h1 {
     text-align: center;
 }

@@ -17,8 +17,18 @@ class User(db.Model):
         self.password = password
         self.genre = genre
 
+def agregar_producto(nombre, correo, contrasena, genero):
+    # Verificar si ya existe un registro con el mismo nombre
+    usuario_existente = User.query.filter_by(email= correo).first()
+    if usuario_existente is None:
+        # Si no existe, agrega el nuevo producto
+        nuevo_user = User(name= nombre, email= correo, password= contrasena, genre= genero)
+        db.session.add(nuevo_user)
+
 with app.app_context():
     db.create_all()
+    agregar_producto('admin', 'admin', 'admin', 'Masculino')
+    db.session.commit()
 
 class UserSchema(ma.Schema):
     class Meta:

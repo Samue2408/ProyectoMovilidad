@@ -17,16 +17,19 @@
     <label for="contrasena">Contraseña:</label>
     <input type="password" id="contrasena" name="contrasena" value="{{ User.password }}" required>
     <br>
-    <label for="email">Correo:</label>
-    <input type="text" id="email" name="email" value="{{ User.email }}" diseable>
-    <br>
-    <label for="genre">Género:</label>
-    <input type="text" id="genre" name="genre" value="{{ User.genre }}" disabled>
-    <br>
+    <fieldset disabled>
+        <label for="email">Correo:</label>
+        <input type="text" id="email" name="email" value="{{ User.email }}">
+        <br>
+        <label for="genre">Género:</label>
+        <input type="text" id="genre" name="genre" value="{{ User.genre }}">
+        <br>
+    </fieldset>
+
     <input type="submit" value="Guardar Cambios">
 
 </form>
 {% endblock %}
 
 {% block scripts %}
-{% endblock %} 
+{% endblock %}
