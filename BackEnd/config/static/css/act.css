@@ -1,4 +1,10 @@
 /* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
     --blanco: #ffffff;
     --oscuro: #212121;
@@ -21,10 +27,11 @@ html {
   }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
 fieldset{
@@ -32,11 +39,29 @@ fieldset{
 }
 
 h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    display: flex;
+    margin: 5vh;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
+.container_form{
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+    margin: 10px;
+}
+
 form {
-    max-width: 300px;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -52,42 +77,38 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+
+button {
+    width: 20%;
 }
 
-/* Estilo para el botón de guardar cambios */
-input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
-    cursor: pointer;
+.col-12 {
+    display: flex;
+    justify-content: center;
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
+fieldset .form-control {
+    width: 200%;
+    height: 5vh;
+    font-size: 1.8vh;
 }
 
-/* Estilos para los párrafos de información */
-p {
-    margin-bottom: 10px;
+@media (max-width: 767px) {
+    fieldset .form-control {
+        width: 100%;
+    }
 }
 
-/* Estilos para el formulario */
-#update-form {
-    margin-top: 20px;
+@media (max-width: 872px) {
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        display: flex;
+        height: 10%;
+        margin: 4vh;
+    }
+    .container_form {
+        padding-top: 10px;
+        align-items: baseline;  
+    }
 }
-
-/* Estilos para el campo "Género" */
-#genre {
-    width: 100%;
-}
-
-/* Otras etiquetas o elementos que desees personalizar */

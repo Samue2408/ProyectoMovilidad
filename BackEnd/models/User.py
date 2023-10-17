@@ -27,7 +27,7 @@ def agregar_producto(nombre, correo, contrasena, genero):
 
 with app.app_context():
     db.create_all()
-    agregar_producto('admin', 'admin', 'admin', 'Masculino')
+    agregar_producto('admin', 'admin@admin.com', 'admin', 'Masculino')
     db.session.commit()
 
 class UserSchema(ma.Schema):

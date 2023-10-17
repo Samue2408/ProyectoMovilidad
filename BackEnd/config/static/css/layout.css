@@ -16,6 +16,7 @@ body {
   background-color: var(--secundario);
   border-radius: 10px;
   margin: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .navegacion-principal {
@@ -59,7 +60,7 @@ body {
     padding: 0.5rem 1rem; /* Ajustar el relleno para pantallas más pequeñas */
   }
   .navegacion-principal {
-    height: 200px;
+    height: auto;
   }
   #close_ss {
     height: 20px;
