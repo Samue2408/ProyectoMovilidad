@@ -12,6 +12,10 @@ function initMap() {
           lng: position.coords.longitude,
         };
 
+        // Establecer el campo de origen con la ubicación del usuario
+        const fromInput = document.getElementById("from");
+        fromInput.value = userLocation.lat + ", " + userLocation.lng;
+
         // Crear el mapa centrado en la ubicación del usuario
         map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,
@@ -32,7 +36,6 @@ function initMap() {
         });
 
         // Inicializar el objeto de autocompletar para el campo de origen
-        const fromInput = document.getElementById("from");
         const fromAutocomplete = new google.maps.places.Autocomplete(fromInput);
 
         // Inicializar el objeto de autocompletar para el campo de destino
