@@ -21,7 +21,7 @@
                 <input type="text" class="form-control" id="inputName" value="{{ User.name }}">
             </div>
         </fieldset>
-        
+
         <fieldset disabled>
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
@@ -35,19 +35,19 @@
                 <input type="password" class="form-control" id="inputPassword4" value="{{ User.password }}">
             </div>
         </fieldset>
-        
+
         <fieldset disabled>
             <div class="col-md-6">
                 <label for="inputGenre" class="form-label">Genero</label>
                 <input type="text" class="form-control" id="inputGenre" value="{{ User.genre }}">
                 <input type="hidden" id="id_user" value="{{ User.id_user }}">
-            </div>            
+            </div>
         </fieldset>
         <div class="col-12">
             <button id="guardar_info" class="btn btn-primary">Guardar</button>
-        </div>        
+        </div>
     </form>
-    
+
 
 </div>
 
@@ -57,4 +57,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/update.js') }}"></script>
 {% endblock %}

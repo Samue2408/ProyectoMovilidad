@@ -35,10 +35,12 @@ def saveuser():
 
 @ruta_user.route("/updateuser", methods=["PUT"])
 def updateuser():
-    id = request.json['id_user']    
+    id = request.json['id_user'] 
     nuser = User.query.get(id) #Select * from Cliente where id = id
     nuser.name = request.json['name']
     nuser.password = request.json['password']
+    session['name'] = request.json['name']
+    session['password'] = request.json['password']
     db.session.commit()
     return "Datos Actualizado con exitos"
 
@@ -63,7 +65,8 @@ def signin():
         session['email'] = email
         session['name'] = usuario['name']
         session['password'] = password
-        session['genre'] = usuario['genre']      
+        session['genre'] = usuario['genre']   
+        print(session['id_user'])   
         return jsonify({'mensaje': 'Bienvenido'})
     else:
         return jsonify({'error': 'Opss...'}), 401

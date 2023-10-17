@@ -1,21 +1,11 @@
 // Obtener el formulario y los campos de entrada
-const updateForm = document.getElementById("guardar_info");
-const nombreInput = document.getElementById("nombre");
-const contrasenaInput = document.getElementById("contrasena");
-
-
-
-
-
-// Agregar un evento de envío al formulario
-updateForm.addEventListener("click", function(event) {
-    event.preventDefault(); // Evitar la recarga de la página por defecto
-
+document.getElementById("guardar_info").addEventListener("click", function(event) {
+    // Evitar la recarga de la página por defecto
+    console.log("entro")
     // Obtener los valores de los campos
     const nuevoNombre = document.getElementById("inputName").value;
-    const nuevoEmail = document.getElementById("inputEmail4").value;
     const nuevoPassword = document.getElementById("inputPassword4").value;
-    const id = document.getElementById("id_user").value
+    const id = document.getElementById("id_user").value;
 
     // Crear un objeto con los datos a enviar a la API
     const data = {
@@ -40,4 +30,5 @@ updateForm.addEventListener("click", function(event) {
     .catch(error => {
         console.error('Error:', error);
     });
+    event.preventDefault();
 });
