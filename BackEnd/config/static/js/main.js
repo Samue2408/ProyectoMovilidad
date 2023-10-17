@@ -25,7 +25,7 @@ function initMap() {
           position: userLocation,
           map: map,
           icon: {
-            url: "{{url_for('static', filename='../img/bisi.png')}}", // Ruta a tu icono de marcador
+            url: "/static/img/bisi.png", // Ruta a tu icono de marcador
             scaledSize: new google.maps.Size(32, 32), // Tamaño personalizado del icono
           },
           title: "Tu ubicación",
@@ -84,10 +84,15 @@ function initMap() {
         const calculateRouteButton = document.getElementById("calculate-route");
 
         // Agregar un evento de clic al botón de calcular ruta
-        calculateRouteButton.addEventListener("click", function() {
+        calculateRouteButton.addEventListener("click", function () {
           const origin = fromInput.value;
           const destination = toInput.value;
-          calculateAndDisplayRoute(directionsService, directionsRenderer, origin, destination);
+          calculateAndDisplayRoute(
+            directionsService,
+            directionsRenderer,
+            origin,
+            destination
+          );
         });
       },
       () => {
