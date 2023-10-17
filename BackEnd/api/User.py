@@ -22,6 +22,7 @@ def saveuser():
     genre = request.json['genre']
     user = db.session.query(User.id_user).filter(User.email == email).all()
     
+    
     result = users_schema.dump(user)
 
     if len(result)==0:
@@ -52,17 +53,17 @@ def deleteusuario(id):
 def signin():
     email = request.json['email']
     password = request.json['password']
-    user = db.session.query(User.genre, User.name).filter(User.email == email, User.password == password).all()
+    user = db.session.query(User.genre, User.id_user, User.name).filter(User.email == email, User.password == password).all()
     
     result = users_schema.dump(user)
 
     if len(result)>0:
         usuario = result[0]
+        session['id_user'] = usuario['id_user']
         session['email'] = email
         session['name'] = usuario['name']
         session['password'] = password
-        session['genre'] = usuario['genre'] 
-        print(email, usuario['name'], password, usuario['genre'])       
+        session['genre'] = usuario['genre']      
         return jsonify({'mensaje': 'Bienvenido'})
     else:
         return jsonify({'error': 'Opss...'}), 401

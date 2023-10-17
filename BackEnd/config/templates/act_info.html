@@ -25,7 +25,7 @@
         <fieldset disabled>
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" value="{{ User.email }}">
+                <input type="email" class="form-control" id="inputEmail4" value="{{ User.email }}">
             </div>
         </fieldset>
 
@@ -40,13 +40,15 @@
             <div class="col-md-6">
                 <label for="inputGenre" class="form-label">Genero</label>
                 <input type="text" class="form-control" id="inputGenre" value="{{ User.genre }}">
+                <input type="hidden" id="id_user" value="{{ User.id_user }}">
             </div>            
         </fieldset>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
-        
+            <button id="guardar_info" class="btn btn-primary">Guardar</button>
+        </div>        
     </form>
+    
+
 </div>
 
 {% endblock %}

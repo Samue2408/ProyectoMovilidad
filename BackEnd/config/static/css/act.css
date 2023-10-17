@@ -61,7 +61,7 @@ form {
     height: 55vh;
     display: flex;
     justify-content: center;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -78,8 +78,9 @@ label {
 }
 
 
-button {
-    width: 20%;
+.col-12 button {
+    width: 32%;
+    font-size: 1.5vh;
 }
 
 .col-12 {
@@ -91,6 +92,7 @@ fieldset .form-control {
     width: 200%;
     height: 5vh;
     font-size: 1.8vh;
+    padding-left: 15px;
 }
 
 @media (max-width: 767px) {

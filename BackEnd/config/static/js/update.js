@@ -1,5 +1,5 @@
 // Obtener el formulario y los campos de entrada
-const updateForm = document.getElementById("update-form");
+const updateForm = document.getElementById("guardar_info");
 const nombreInput = document.getElementById("nombre");
 const contrasenaInput = document.getElementById("contrasena");
 
@@ -8,26 +8,24 @@ const contrasenaInput = document.getElementById("contrasena");
 
 
 // Agregar un evento de envío al formulario
-updateForm.addEventListener("submit", function(event) {
+updateForm.addEventListener("click", function(event) {
     event.preventDefault(); // Evitar la recarga de la página por defecto
 
     // Obtener los valores de los campos
-    const nuevoNombre = document.getElementById("nombre").value;
-    const nuevaContrasena = document.getElementById("contrasena").value;
-    const nuevoEmail = document.getElementById("email").value;
-    const nuevoGenre = document.getElementById("genre").value;
+    const nuevoNombre = document.getElementById("inputName").value;
+    const nuevoEmail = document.getElementById("inputEmail4").value;
+    const nuevoPassword = document.getElementById("inputPassword4").value;
+    const id = document.getElementById("id_user").value
 
     // Crear un objeto con los datos a enviar a la API
     const data = {
-        id_user: user_id, // Supongamos que tienes una variable user_id definida
         name: nuevoNombre,
-        password: nuevaContrasena,
-        email: nuevoEmail,
-        genre: nuevoGenre,
+        password: nuevoPassword,
+        id_user: id
     };
 
     // Realizar la solicitud PUT a la API
-    fetch('/updateuser', {
+    fetch('/api/updateuser', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -37,7 +35,7 @@ updateForm.addEventListener("submit", function(event) {
     .then(response => response.text())
     .then(responseText => {
         // Manejar la respuesta de la API, por ejemplo, mostrar un mensaje de éxito
-        alert(responseText);
+        alert("Datos guardados");
     })
     .catch(error => {
         console.error('Error:', error);
