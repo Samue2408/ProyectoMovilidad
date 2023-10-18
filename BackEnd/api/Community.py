@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request,json, session
+from flask import Blueprint, jsonify, request,json, session, redirect, url_for
 from config.db import db, app, ma
 from models.Community import Community, CommunitySchema
 
@@ -12,7 +12,8 @@ communities_schema = CommunitySchema(many=True)
 def communities():
     resultall = Community.query.all()
     result = communities_schema.dump(resultall)
-    return jsonify(result)
+    session['communities'] = result
+    return redirect(url_for("comunidad"))
 
 @ruta_community.route("/savecommunity", methods=["POST"])
 def savecommunity():

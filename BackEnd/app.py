@@ -41,10 +41,10 @@ def mapa():
 
 @app.route("/foro")
 def comunidad():
-    if "email" in session:
-        return render_template("foro.html", Email=session["email"], comunidades=session['communities'])
+    if "communities" in session:
+        return render_template("foro.html", comunidades=session['communities'])
     else:
-        return redirect(url_for("login"))
+        return redirect(url_for("ruta_community.communities"))
 
 
 @app.route("/ciclorutas")
@@ -85,15 +85,13 @@ def prueba():
 
 @app.route("/comunidad/<int:id>")
 def comunidad_especifica(id):
-    comunidad = ruta_community.Community.query.get(id)
-    if comunidad:
-        # Obtén las publicaciones de esta comunidad
-        publicaciones = ruta_publications.query.filter_by(id_com=id).all()
+    session['id_community_active'] = id
+    if "publications" in session:
         return render_template(
-            "comunidad.html", comunidad=comunidad, publicaciones=publicaciones
+            "comunidad.html", comunidad=comunidad, publicaciones=session['publications']
         )
     else:
-        return render_template("404.html"), 404
+        return redirect(url_for("ruta_publications.publications"))
 
 
 @app.route("/crear_comunidad", methods=["GET", "POST"])

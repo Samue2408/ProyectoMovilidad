@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request,json
+from flask import Blueprint, jsonify, request,json, session, redirect, url_for
 from config.db import db, app, ma
 from models.Publications import Publications, PublicationsSchema
 
@@ -12,7 +12,8 @@ publications_schema = PublicationsSchema(many=True)
 def publications():
     resultall = Publications.query.all()
     result = publications_schema.dump(resultall)
-    return jsonify(result)
+    session['publications'] = result
+    return redirect(url_for("comunidad_especifica"))
 
 @ruta_publications.route("/savepublication", methods=["POST"])
 def savepublication():
@@ -22,6 +23,9 @@ def savepublication():
     new_publication = Publications(id_com, id_user, menssages)
     db.session.add(new_publication)
     db.session.commit()
+    resultall = Publications.query.all()
+    result = publications_schema.dump(resultall)
+    session['publications'] = result
     return "Datos guardados con exitos"
 
 @ruta_publications.route("/updatepublication", methods=["PUT"])
