@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #00ced1;
+  --secundario: #ae97f9;
+  --gris: #757575;
+}
+
+html {
+  font-size: 55%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="%236f32be" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 19l0 -4l-3 -3l5 -4l2 3l3 0" /><path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>'),
+    auto;
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin: 20px;
+  padding: 20px;
+  background-color: #b3c1ff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.box h1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: #b3c1ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.box form input[type="text"] {
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(174, 151, 249, 0.693);
+  transition: background-color 0.3s ease;
+}
+
+.box form input[type="text"]:focus {
+  background-color: rgba(174, 151, 249, 0.636);
+}
+
+.box form button {
+  font-size: 14px;
+  padding: 5px 15px;
+  width: 50%;
+  background-color: #ae97f9;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.box form button:hover {
+  background-color: #8a6df3;
+}
+@media (max-width: 872px) {
+  .navegacion-principal {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secundario);
+    border-radius: 10px;
+    margin: 8px;
+  }
+}

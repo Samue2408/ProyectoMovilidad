@@ -1,15 +1,22 @@
-{% extends './layout.html' %} {% block title %}Crear Comunidad{% endblock %} 
-{% block body %}
-<h1>Crear Nueva Comunidad</h1>
-<form>
-  <label for="nombre">Nombre de la Comunidad:</label>
-  <input type="text" id="nombre" name="nombre" required />
-  <input type="hidden" id="id_user" value="{{ User.id_user }}">
+{% extends './layout.html' %} {% block title %}Crear Comunidad{% endblock %} {%
+block styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/crear_comunidad.css') }}"
+/>
+{% endblock %} {% block body %}
 
-  <button id="add_community">Crear Comunidad</button>
-</form>
-{% endblock %}
+<div class="box">
+  <h1>Crear Comunidad</h1>
+  <form>
+    <label for="nombre">Nombre de la Comunidad:</label>
+    <input type="text" id="nombre" name="nombre" required />
 
-{% block scripts %}
+    <input type="hidden" id="id_user" value="{{ User.id_user }}" />
+
+    <button id="add_community">Crear Comunidad</button>
+  </form>
+</div>
+{% endblock %} {% block scripts %}
 <script src="{{ url_for('static', filename='js/scri_foro.js') }}"></script>
-{% endblock %}    
+{% endblock %}
