@@ -1,9 +1,22 @@
-{% extends './layout.html' %} {% block title %}{{ comunidad.name }}{% endblock
-%} {% block body %}
-<h1>{{ comunidad.name }}</h1>
-<ul>
-  {% for publicacion in publicaciones %}
-  <li>{{ publicacion.menssages }}</li>
-  {% endfor %}
-</ul>
+{% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
+body %}
+<h1>Comunidad: {{ comunidad.name }}</h1>
+
+<!-- Publicaciones de usuarios -->
+{% for publicacion in publicaciones %}
+<div class="publicacion">
+  <p>{{ publicacion.mensajes }}</p>
+</div>
+{% endfor %}
+
+<!-- Formulario para crear nueva publicación -->
+<h2>Crear Publicación</h2>
+<form
+  method="post"
+  action="{{ url_for('crear_publicacion', id=comunidad.id_com) }}"
+>
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" required></textarea>
+  <button type="submit">Publicar</button>
+</form>
 {% endblock %}
