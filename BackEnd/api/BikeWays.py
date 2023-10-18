@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request,json
+from flask import Blueprint, jsonify, request,json, session, render_template
 from config.db import db, app, ma
 from models.BikeWays import Bike_ways, Bike_waySchema
 
@@ -12,7 +12,8 @@ bikeways_schema = Bike_waySchema(many=True)
 def bikeways():
     resultall = Bike_ways.query.all()
     result = bikeways_schema.dump(resultall)
-    return jsonify(result)
+    session["ciclorutas"] = result
+    return render_template("ciclorutas.html", rutas=session["ciclorutas"])
 
 @ruta_bikeways.route("/savebikeway", methods=["POST"])
 def savebikeway():

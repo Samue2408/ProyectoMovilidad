@@ -49,8 +49,8 @@ def comunidad():
 
 @app.route("/ciclorutas")
 def cicloruta():
-    if "email" in session:
-        return render_template("ciclorutas.html", Email=session["email"])
+    if "ciclorutas" in session:
+        return render_template("ciclorutas.html", rutas=session["ciclorutas"])
     else:
         return redirect(url_for("login"))
 
