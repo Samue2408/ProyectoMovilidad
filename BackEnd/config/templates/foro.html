@@ -8,20 +8,22 @@ styles %}
 {% endblock %} {% block body %}
 <h1>Bienvenido al Foro de Comunidades</h1>
 
-<h2>Lista de Comunidades</h2>
-{% if comunidades %}
-<ul>
-  {% for comunidad in comunidades %}
-  <li>
-    <a href="{{ url_for('comunidad', id=comunidad.id_com) }}"
-      >{{ comunidad.name }}</a
-    >
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>No hay comunidades disponibles en el foro.</p>
-{% endif %}
+<div class="comunidades-box">
+  <h2>Lista de Comunidades</h2>
+  {% if comunidades %}
+  <ul>
+    {% for comunidad in comunidades %}
+    <li>
+      <a href="{{ url_for('comunidad', id=comunidad.id_com) }}"
+        >{{ comunidad.name }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No hay comunidades disponibles en el foro.</p>
+  {% endif %}
+</div>
 
 <a href="{{ url_for('crear_comunidad') }}">Crear Nueva Comunidad</a>
 <a href="{{ url_for('comunidad') }}">Comunidad prueba</a>
