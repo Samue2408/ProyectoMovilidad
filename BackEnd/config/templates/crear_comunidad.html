@@ -1,0 +1,9 @@
+{% extends './layout.html' %} {% block title %}Crear Comunidad{% endblock %} {%
+block body %}
+<h1>Crear Nueva Comunidad</h1>
+<form method="post" action="{{ url_for('crear_comunidad') }}">
+  <label for="nombre">Nombre de la Comunidad:</label>
+  <input type="text" id="nombre" name="nombre" required />
+  <button type="submit">Crear Comunidad</button>
+</form>
+{% endblock %}

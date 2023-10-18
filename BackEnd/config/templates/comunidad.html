@@ -1,0 +1,9 @@
+{% extends './layout.html' %} {% block title %}{{ comunidad.name }}{% endblock
+%} {% block body %}
+<h1>{{ comunidad.name }}</h1>
+<ul>
+  {% for publicacion in publicaciones %}
+  <li>{{ publicacion.menssages }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,17 +1,22 @@
-{% extends './layout.html' %}
+{% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
+styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/style_foro.css') }}"
+/>
 
-{% block title %}Comunidad{% endblock %}
-
-{% block styles %}
-  <link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/style_foro.css') }}"
-  />
-
+{% endblock %} {% block body %}
+<p>hola este es mi foro</p>
+<a href="{{ url_for('crear_comunidad') }}" class="btn btn-primary"
+  >Crear Comunidad</a
+>
+<ul>
+  {% for comunidad in comunidades %}
+  <li>
+    <a href="{{ url_for('comunidad_especifica', id=comunidad.id_com) }}"
+      >{{ comunidad.name }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}
-
-
-{% block body %}
-  <p>hola este es mi foro</p>
-{% endblock %}
-

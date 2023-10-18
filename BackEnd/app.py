@@ -11,6 +11,7 @@ from api.Routes import ruta_route
 from api.Alerts import ruta_alerts
 from api.Rutp_Bkway import ruta_RutpBkway
 
+
 app.register_blueprint(ruta_user, url_prefix="/api")
 app.register_blueprint(ruta_community, url_prefix="/api")
 app.register_blueprint(ruta_publications, url_prefix="/api")
@@ -21,61 +22,111 @@ app.register_blueprint(ruta_bikeways, url_prefix="/api")
 app.register_blueprint(ruta_alerts, url_prefix="/api")
 app.register_blueprint(ruta_RutpBkway, url_prefix="/api")
 
+
 @app.route("/")
 def index():
-    if 'email' in session:
-        return redirect(url_for('principal'))
+    if "email" in session:
+        return redirect(url_for("principal"))
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for("login"))
+
 
 @app.route("/mapa")
 def mapa():
-    if 'email' in session:
-        return render_template('mapa.html', Email= session['email'])
+    if "email" in session:
+        return render_template("mapa.html", Email=session["email"])
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for("login"))
+
 
 @app.route("/foro")
 def comunidad():
-    if 'email' in session:
-        return render_template('foro.html', Email= session['email'])
+    if "email" in session:
+        return render_template("foro.html", Email=session["email"])
     else:
-        return redirect(url_for('login'))
-    
+        return redirect(url_for("login"))
+
 
 @app.route("/ciclorutas")
 def cicloruta():
-    if 'email' in session:
-        return render_template('ciclorutas.html', Email= session['email'])
+    if "email" in session:
+        return render_template("ciclorutas.html", Email=session["email"])
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for("login"))
+
 
 @app.route("/login")
 def login():
-    return render_template('login.html')
-    
+    return render_template("login.html")
+
+
 @app.route("/principal")
 def principal():
-    if 'email' in session:
-        return render_template('index.html', Email= session['email'])
+    if "email" in session:
+        return render_template("index.html", Email=session["email"])
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for("login"))
+
 
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for('login'))
+    return redirect(url_for("login"))
 
 
 def pagina_no_encontrada(error):
-    return render_template('404.html'), 404
+    return render_template("404.html"), 404
+
 
 @app.route("/prueba")
 def prueba():
-    return render_template('act_info.html', User=session, Email = session['email'])
+    return render_template("act_info.html", User=session, Email=session["email"])
+
+
+@app.route("/comunidad/<int:id>")
+def comunidad_especifica(id):
+    comunidad = ruta_community.Community.query.get(id)
+    if comunidad:
+        # Obtén las publicaciones de esta comunidad
+        publicaciones = ruta_publications.query.filter_by(id_com=id).all()
+        return render_template(
+            "comunidad.html", comunidad=comunidad, publicaciones=publicaciones
+        )
+    else:
+        return render_template("404.html"), 404
+
+
+@app.route("/crear_comunidad", methods=["GET", "POST"])
+def crear_comunidad():
+    if "email" not in session:
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        try:
+            # Obtiene el nombre de la comunidad del formulario
+            nombre_comunidad = request.form["nombre"]
+
+            # Crea una nueva instancia de la clase Community
+            nueva_comunidad = ruta_community(name=nombre_comunidad)
+
+            # Agrega la nueva comunidad a la sesión de la base de datos
+            db.session.add(nueva_comunidad)
+
+            # Guarda los cambios en la base de datos
+            db.session.commit()
+
+            # Redirige a la página de la comunidad recién creada
+            return redirect(url_for("comunidad_especifica", id=nueva_comunidad.id_com))
+
+        except Exception as e:
+            # Manejo de errores: imprime el error y revierte cualquier cambio en la base de datos
+            print("Error al crear comunidad:", str(e))
+            db.session.rollback()
+
+    # Si el método de la solicitud es GET o si hay un error al crear la comunidad, muestra el formulario
+    return render_template("crear_comunidad.html", Email=session["email"])
+
 
 if __name__ == "__main__":
-    app.register_error_handler(404,pagina_no_encontrada)
-    app.run(debug=True, port=5000, host='0.0.0.0')
-    
-    
+    app.register_error_handler(404, pagina_no_encontrada)
+    app.run(debug=True, port=5000, host="0.0.0.0")
