@@ -24,7 +24,6 @@ body {
   font-size: 18px; 
 }
 
-
 .titulo {
   margin-bottom: 20px;
 }
@@ -33,33 +32,26 @@ body {
   margin-bottom: 30px;
   text-align: center;
 }
-
 .comunidades-box {
-  float: right; 
-  width: 40%; 
-  background-color: var(--secundario); 
+  margin: 0 auto; /* Centra la caja morada en el contenedor */
+  width: 60%; /* Ancho de la caja morada */
+  background-color: var(--secundario);
   color: var(--blanco);
-  padding: 20px; 
-  border-radius: 10px; 
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  text-align: center; /* Centra el texto dentro de la caja morada */
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
 .comunidades-box h2 {
   text-align: center;
 }
 
 .comunidades-box ul {
-  list-style-type: none; /* Elimina los marcadores de lista */
+  list-style-type: none;
   padding: 0;
   margin: 0;
+  margin: 0 auto; /* Centra la lista en el contenedor */
 }
 
 .comunidades-box li {
@@ -73,42 +65,46 @@ body {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: var(--secundario); /* Fondo del enlace */
+  background-color: var(--secundario);
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .comunidades-box a:hover {
-  background-color: var(--primario); /* Cambia el fondo al pasar el cursor sobre el enlace */
+  background-color: var(--primario);
   text-decoration: underline;
 }
 
-
-
-.boton {
-  display: inline-block;
-  margin-top: 20px;
+.boton-crear-comunidad {
+  display: block;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+  width: 60%; /* Ocupa el mismo ancho que .comunidades-box */
+  margin-left: auto;
+  margin-right: auto;
   padding: 12px 24px;
   background-color: var(--primario);
   color: var(--blanco);
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 25px; /* Bordes redondeados */
+  border: 2px solid var(--primario); /* Borde del botón */
+  text-align: center; /* Centra el texto dentro del botón */
   transition: background-color 0.3s ease;
 }
 
-.boton:hover {
-  background-color: var(--secundario);
+.boton-crear-comunidad:hover {
+  background-color: var(--secundario); /* Cambia el color de fondo al pasar el cursor sobre el botón */
+  border-color: var(--secundario); /* Cambia el color del borde al pasar el cursor sobre el botón */
 }
-
-
-
-
-
-
+p{
+  text-align: center;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media (max-width: 872px) {
   .navegacion-principal {
-    height: auto; /* Establece la altura del menú según su contenido */
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
