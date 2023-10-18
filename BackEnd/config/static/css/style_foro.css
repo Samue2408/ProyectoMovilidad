@@ -35,6 +35,7 @@ body {
 .comunidades-box {
   margin: 0 auto; /* Centra la caja morada en el contenedor */
   width: 60%; /* Ancho de la caja morada */
+  margin-top: 20px; 
   background-color: var(--secundario);
   color: var(--blanco);
   padding: 20px;
