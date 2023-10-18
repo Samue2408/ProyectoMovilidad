@@ -52,7 +52,7 @@ def cicloruta():
     if "ciclorutas" in session:
         return render_template("ciclorutas.html", rutas=session["ciclorutas"])
     else:
-        return redirect(url_for("login"))
+        return redirect(url_for("ruta_bikeway.bikeways"))
 
 
 @app.route("/login")

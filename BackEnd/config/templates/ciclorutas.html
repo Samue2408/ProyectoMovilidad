@@ -18,27 +18,8 @@
     <h3>Rutas:</h3>
     <ul>
         {% for ruta in rutas %}
-            <li><a href="/"><strong>{{ ruta.name }}:</strong> ruta.desciption</a></li>
+            <li><a href="/"><strong>{{ ruta.name }}:</strong> {{ ruta.description }}</a></li>
         {% endfor %}
     </ul>
 </div>
-{% endblock %}
-
-{% block scripts %}
-<script>
-    const ciclorutasContainer = document.getElementById(
-        "ciclorutas-container"
-    );
-
-    const ciclorutas = `
-            
-            <ul>
-                <li><strong>Ruta 1:</strong> Va desde la Calle 30 hasta la Calle 72, pasando por la Carrera 46 y la Carrera 44. Es una ciclovía exclusiva para bicicletas.</li>
-                <li><strong>Ruta 2:</strong> Va desde la Calle 72 hasta la Calle 99, pasando por la Carrera 51B y la Carrera 53. Es una ciclorruta compartida con vehículos motorizados.</li>
-                <li><strong>Ruta 3:</strong> Va desde la Calle 99 hasta la Calle 110, pasando por la Carrera 51B y la Carrera 54. Es una ciclorruta en construcción.</li>
-                <li><strong>Ruta 4:</strong> Va desde la Calle 110 hasta la Vía al Mar, pasando por la Carrera 51B, la Carrera 59, el Puente Pumarejo y el Corredor Portuario. Es una ciclorruta propuesta.</li>
-            </ul>
-        `;
-    ciclorutasContainer.innerHTML = ciclorutas;
-</script>
 {% endblock %}
