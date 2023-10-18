@@ -14,7 +14,7 @@ styles %}
   <ul>
     {% for comunidad in comunidades %}
     <li>
-      <a href="{{ url_for('comunidad', id=comunidad.id_com) }}"
+      <a href="/comunidad/{{comunidad.id_com}}"
         >{{ comunidad.name }}</a
       >
     </li>
@@ -26,5 +26,4 @@ styles %}
 </div>
 
 <a href="{{ url_for('crear_comunidad') }}">Crear Nueva Comunidad</a>
-<a href="{{ url_for('comunidad') }}">Comunidad prueba</a>
 {% endblock %}
