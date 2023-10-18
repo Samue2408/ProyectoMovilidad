@@ -24,10 +24,18 @@ def saveroute():
     create_date = request.json['create_date']
     id_user = request.json['id_user']
     id_spoints = request.json['id_spoints']
-    new_route = Route(name, description, initial_latitude, initial_longitude, final_latitude, final_longitude, create_date, id_user, id_spoints)
-    db.session.add(new_route)
-    db.session.commit()
-    return "Datos guardados con exitos"
+    
+    route = db.session.query(Route.id_route).filter(Route.name == name).all()
+    
+    result = routes_schema.dump(route)
+
+    if len(result)==0:
+        new_route = Route(name, description, initial_latitude, initial_longitude, final_latitude, final_longitude, create_date, id_user, id_spoints)
+        db.session.add(new_route)
+        db.session.commit()
+        return jsonify({'mensaje': 'Registro exitoso'})
+    else:
+        return jsonify({'error': 'Opss...'}), 401 
 
 @ruta_route.route("/updateroute", methods=["PUT"])
 def updateroute():
