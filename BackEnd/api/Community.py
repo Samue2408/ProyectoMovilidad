@@ -17,9 +17,12 @@ def communities():
 @ruta_community.route("/savecommunity", methods=["POST"])
 def savecommunity():
     name = request.json['name']
-    new_community = Community(name)
+    new_community = Community(name)    
     db.session.add(new_community)
     db.session.commit()
+    resultall = Community.query.all()
+    result = communities_schema.dump(resultall)
+    session['communities'] = result
     return jsonify({'mensaje': 'Bienvenido'})
 
 @ruta_community.route("/updatecommunity", methods=["PUT"])

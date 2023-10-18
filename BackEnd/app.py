@@ -42,7 +42,7 @@ def mapa():
 @app.route("/foro")
 def comunidad():
     if "email" in session:
-        return render_template("foro.html", Email=session["email"])
+        return render_template("foro.html", Email=session["email"], comunidades=session['communities'])
     else:
         return redirect(url_for("login"))
 
