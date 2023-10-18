@@ -1,20 +1,24 @@
 {% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
 body %}
-<h1>Comunidad: {{ comunidad.name }}</h1>
+<h1>Comunidad: {{ comunidad }}</h1>
 
 <!-- Publicaciones de usuarios -->
 {% for publicacion in publicaciones %}
-<div class="publicacion">
-  <p>{{ publicacion.mensajes }}</p>
-</div>
+
+{% if publicacion.id_com == id %}
+  <div class="publicacion">
+    <p>{{ publicacion.menssages }}</p>
+  </div>
+{% else %}
+  <p>No hay mensajes</p>
+{% endif %}
+
 {% endfor %}
 
 <!-- Formulario para crear nueva publicación -->
 <h2>Crear Publicación</h2>
 <form
-  method="post"
-  action="{{ url_for('crear_publicacion', id=comunidad.id_com) }}"
->
+  method="post">
   <label for="mensaje">Mensaje:</label>
   <textarea id="mensaje" name="mensaje" required></textarea>
   <button type="submit">Publicar</button>

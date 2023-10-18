@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request,json, session, redirect, url_for
 from config.db import db, app, ma
 from models.Publications import Publications, PublicationsSchema
+from models.Community import Community
 
 ruta_publications = Blueprint("ruta_publications",__name__)
 #routes_cliente = Blueprint("routes_cliente", __name__)
@@ -13,7 +14,10 @@ def publications():
     resultall = Publications.query.all()
     result = publications_schema.dump(resultall)
     session['publications'] = result
-    return redirect(url_for("comunidad_especifica"))
+    id_com = session['id_community_active']
+    ncommunity = Community.query.get(id_com) #Select * from Cliente where id = id
+    session['community_active'] = ncommunity.name
+    return redirect(url_for("comunidad_especifica", id=id_com))
 
 @ruta_publications.route("/savepublication", methods=["POST"])
 def savepublication():

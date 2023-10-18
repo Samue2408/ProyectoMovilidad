@@ -88,7 +88,7 @@ def comunidad_especifica(id):
     session['id_community_active'] = id
     if "publications" in session:
         return render_template(
-            "comunidad.html", comunidad=comunidad, publicaciones=session['publications']
+            "comunidad.html", comunidad=session['community_active'], publicaciones=session['publications'], id=session['id_community_active']
         )
     else:
         return redirect(url_for("ruta_publications.publications"))
