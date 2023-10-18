@@ -29,7 +29,9 @@
       {% if publicacion.id_com == comunidad.id_com %}
           <div class="publicacion">
               <div class="dark-layer"></div> <!-- Capa oscura para cada publicación -->
+              <p>{{ publicacion.name_user }}</p>
               <p>{{ publicacion.menssages }}</p>
+
           </div>
       {% endif %}
   {% endfor %}

@@ -3,6 +3,7 @@ from config.db import db, app, ma
 from models.Publications import Publications, PublicationsSchema
 from models.Community import Community
 from api.Community import community_schema
+from models.User import User
 
 ruta_publications = Blueprint("ruta_publications",__name__)
 #routes_cliente = Blueprint("routes_cliente", __name__)
@@ -14,7 +15,11 @@ publications_schema = PublicationsSchema(many=True)
 def publications():
     resultall = Publications.query.all()
     result = publications_schema.dump(resultall)
+    for resu in result:
+        id = User.query.get(resu['id_user'])
+        resu['name_user'] = id.name
     session['publications'] = result
+    print(result)
     id_com = int(session['id_community_active'])
     ncommunity = Community.query.get(id_com) #Select * from Cliente where id = id
     session['community_active'] = community_schema.dump(ncommunity)
@@ -28,10 +33,7 @@ def savepublication():
     new_publication = Publications(id_com, id_user, menssages)
     db.session.add(new_publication)
     db.session.commit()
-    resultall = Publications.query.all()
-    result = publications_schema.dump(resultall)
-    session['publications'] = result
-    return "Datos guardados con exitos"
+    return redirect(url_for("ruta_publications.publications"))
 
 @ruta_publications.route("/updatepublication", methods=["PUT"])
 def updatepublication():
