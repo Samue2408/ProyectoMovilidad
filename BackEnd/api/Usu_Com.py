@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request,json
 from config.db import db, app, ma
 from models.Usu_Com import Usu_com, Usu_comSchema
+from models.Community import Community, CommunitySchema
 
 ruta_usucom = Blueprint("ruta_usucom",__name__)
 #routes_cliente = Blueprint("routes_cliente", __name__)
@@ -16,12 +17,20 @@ def usucoms():
 
 @ruta_usucom.route("/saveusucom", methods=["POST"])
 def saveusucom():
-    id_com = request.json['id_com']
-    id_user = request.json['id_user']
-    type_usu = request.json['type_usu']
-    new_usucom = Usu_com(id_com, id_user, type_usu)
-    db.session.add(new_usucom)
-    db.session.commit()
+    name_com = request.json['name']
+    comm = db.session.query(Community.id_com).filter(Community.name == name_com).all()
+    id_com = CommunitySchema.dump(comm)
+    
+    print(id_com)
+        
+    if len(comm) > 0 :
+        
+        id_user = request.json['id_user']
+        type_usu = request.json['type_usu']
+        new_usucom = Usu_com(id_com, id_user, type_usu)
+        db.session.add(new_usucom)
+        db.session.commit()   
+    
     return "Datos guardados con exitos"
 
 @ruta_usucom.route("/updateusucom", methods=["PUT"])

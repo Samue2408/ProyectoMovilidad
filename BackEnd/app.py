@@ -124,7 +124,7 @@ def crear_comunidad():
             db.session.rollback()
 
     # Si el método de la solicitud es GET o si hay un error al crear la comunidad, muestra el formulario
-    return render_template("crear_comunidad.html", Email=session["email"])
+    return render_template("crear_comunidad.html", Email=session["email"], User=session)
 
 
 if __name__ == "__main__":

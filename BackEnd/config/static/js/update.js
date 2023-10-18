@@ -1,7 +1,6 @@
 // Obtener el formulario y los campos de entrada
 document.getElementById("guardar_info").addEventListener("click", function(event) {
-    // Evitar la recarga de la página por defecto
-    console.log("entro")
+    
     // Obtener los valores de los campos
     const nuevoNombre = document.getElementById("inputName").value;
     const nuevoPassword = document.getElementById("inputPassword4").value;

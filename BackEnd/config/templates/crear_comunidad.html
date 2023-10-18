@@ -1,9 +1,15 @@
-{% extends './layout.html' %} {% block title %}Crear Comunidad{% endblock %} {%
-block body %}
+{% extends './layout.html' %} {% block title %}Crear Comunidad{% endblock %} 
+{% block body %}
 <h1>Crear Nueva Comunidad</h1>
-<form method="post" action="{{ url_for('crear_comunidad') }}">
+<form>
   <label for="nombre">Nombre de la Comunidad:</label>
   <input type="text" id="nombre" name="nombre" required />
-  <button type="submit">Crear Comunidad</button>
+  <input type="hidden" id="id_user" value="{{ User.id_user }}">
+
+  <button id="add_community">Crear Comunidad</button>
 </form>
 {% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scri_foro.js') }}"></script>
+{% endblock %}    

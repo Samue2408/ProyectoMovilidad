@@ -22,7 +22,6 @@ def saveuser():
     genre = request.json['genre']
     user = db.session.query(User.id_user).filter(User.email == email).all()
     
-    
     result = users_schema.dump(user)
 
     if len(result)==0:

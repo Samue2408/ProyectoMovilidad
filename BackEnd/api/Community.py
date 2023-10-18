@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request,json
+from flask import Blueprint, jsonify, request,json, session
 from config.db import db, app, ma
 from models.Community import Community, CommunitySchema
 
@@ -20,7 +20,7 @@ def savecommunity():
     new_community = Community(name)
     db.session.add(new_community)
     db.session.commit()
-    return "Datos guardados con exitos"
+    return jsonify({'mensaje': 'Bienvenido'})
 
 @ruta_community.route("/updatecommunity", methods=["PUT"])
 def updatecommunity():

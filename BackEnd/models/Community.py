@@ -4,7 +4,7 @@ class Community(db.Model):
     __tablename__ = "Community"
 
     id_com = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50))
+    name = db.Column(db.String(50), unique= True)
 
     def __init__(self, name):
         self.name = name
