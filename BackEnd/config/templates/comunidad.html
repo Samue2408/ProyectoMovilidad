@@ -1,12 +1,12 @@
 {% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
 body %}
-<h1>Comunidad: {{ comunidad }}</h1>
+<h1>Comunidad: {{ comunidad.name }}</h1>
 <input type="hidden" id="id_com" value="{{ id }}">
 
 <!-- Publicaciones de usuarios -->
 {% for publicacion in publicaciones %}
 
-{% if publicacion.id_com == id %}
+{% if publicacion.id_com == comunidad.id_com %}
 <div class="publicacion">
   <p>{{ publicacion.menssages }}</p>
 </div>

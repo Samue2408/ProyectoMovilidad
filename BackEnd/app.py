@@ -86,10 +86,11 @@ def prueba():
 @app.route("/comunidad/<int:id>")
 def comunidad_especifica(id):
     session['id_community_active'] = id
-    if "publications" in session:
-        return render_template(
-            "comunidad.html", comunidad=session['community_active'], publicaciones=session['publications'], id=session['id_community_active'], id_user=session['id_user']
-        )
+    
+    if "publications" in session and id == session['community_active']["id_com"]:
+            return render_template(
+                "comunidad.html", comunidad=session['community_active'], publicaciones=session['publications'], id_user=session['id_user']
+            )
     else:
         return redirect(url_for("ruta_publications.publications"))
 
