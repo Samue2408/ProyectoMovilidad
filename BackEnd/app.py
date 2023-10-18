@@ -98,31 +98,6 @@ def comunidad_especifica(id):
 
 @app.route("/crear_comunidad", methods=["GET", "POST"])
 def crear_comunidad():
-    if "email" not in session:
-        return redirect(url_for("login"))
-
-    if request.method == "POST":
-        try:
-            # Obtiene el nombre de la comunidad del formulario
-            nombre_comunidad = request.form["nombre"]
-
-            # Crea una nueva instancia de la clase Community
-            nueva_comunidad = ruta_community(name=nombre_comunidad)
-
-            # Agrega la nueva comunidad a la sesión de la base de datos
-            db.session.add(nueva_comunidad)
-
-            # Guarda los cambios en la base de datos
-            db.session.commit()
-
-            # Redirige a la página de la comunidad recién creada
-            return redirect(url_for("comunidad_especifica", id=nueva_comunidad.id_com))
-
-        except Exception as e:
-            # Manejo de errores: imprime el error y revierte cualquier cambio en la base de datos
-            print("Error al crear comunidad:", str(e))
-            db.session.rollback()
-
     # Si el método de la solicitud es GET o si hay un error al crear la comunidad, muestra el formulario
     return render_template("crear_comunidad.html", Email=session["email"], User=session)
 

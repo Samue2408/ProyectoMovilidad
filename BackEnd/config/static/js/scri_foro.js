@@ -1,5 +1,7 @@
 document.getElementById("add_community").addEventListener("click", function (event) {
 
+    event.preventDefault();
+
     const nombre = document.getElementById("nombre").value;
     const id = document.getElementById("id_user").value;
 
@@ -21,7 +23,7 @@ document.getElementById("add_community").addEventListener("click", function (eve
         if (data.error) {
             Swal.fire({
                 title: data.error,
-                text: 'N incorrectas',
+                text: 'Credenciales incorrectas',
                 footer: '<p>Si has <a href="/hidden_pw">olvidado tu contraseña</a>, puedes restablecerla</p>',
                 icon: 'error',
                 backdrop: false,
@@ -58,7 +60,7 @@ document.getElementById("add_community").addEventListener("click", function (eve
               backdrop: false,
               timer: 3500,
             }).then((result) => {
-              window.location.href = "/foro";
+              window.location.href = "/";
             });           
           }
     })
