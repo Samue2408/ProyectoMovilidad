@@ -12,9 +12,12 @@ function initMap() {
           lng: position.coords.longitude,
         };
 
-        // Establecer el campo de origen con la ubicación del usuario
         const fromInput = document.getElementById("from");
-        fromInput.value = userLocation.lat + ", " + userLocation.lng;
+        // Establecer el campo de origen con la ubicación del usuario
+        if (fromInput.value.trim() == "") {
+          // Código a ejecutar si la condición es verdadera
+          fromInput.value = userLocation.lat + ", " + userLocation.lng;
+        }
 
         // Crear el mapa centrado en la ubicación del usuario
         map = new google.maps.Map(document.getElementById("map"), {
@@ -86,6 +89,12 @@ function initMap() {
             toInput.value = ""; // Limpiar el campo de destino si la sugerencia no es válida
           }
         });
+
+        const ubi = userLocation.lat + ", " + userLocation.lng;
+        const boton = document.getElementById("calculate-route");
+        if(fromInput.value.trim() != ubi){
+          boton.click();
+        }
       },
       () => {
         alert("Error al obtener la ubicación del usuario.");

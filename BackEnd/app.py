@@ -34,10 +34,16 @@ def index():
 @app.route("/mapa")
 def mapa():
     if "email" in session:
-        return render_template("mapa.html", Email=session["email"])
+        return render_template("mapa.html")
     else:
         return redirect(url_for("login"))
 
+@app.route("/mapa/<inicial>/<fina>")
+def mapa_ciclo(inicial, fina):
+    if "email" in session:
+        return render_template("mapa.html", initial= inicial, final=fina)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/foro")
 def comunidad():

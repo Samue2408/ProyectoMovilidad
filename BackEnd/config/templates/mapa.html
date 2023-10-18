@@ -14,15 +14,25 @@
 {% endblock %}
 
 {% block body %}
+
+
 <div id="menu-lateral">
   <h1>Donde quieres ir?</h1>
   <div>
     <label for="from">Origen:</label>
+    {% if initial %}
+    <input type="text" id="from" placeholder="Origen" value="{{ initial }}"/>
+    {% else %}
     <input type="text" id="from" placeholder="Origen" />
+    {% endif %}
   </div>
   <div>
     <label for="to">Destino:</label>
+    {% if final %}
+    <input type="text" id="to" placeholder="Destino" value="{{ final }}"/>
+    {% else %}
     <input type="text" id="to" placeholder="Destino" />
+    {% endif %}
   </div>
   <button id="calculate-route">Calcular Ruta</button>
 </div>
