@@ -14,7 +14,7 @@ def publications():
     resultall = Publications.query.all()
     result = publications_schema.dump(resultall)
     session['publications'] = result
-    id_com = session['id_community_active']
+    id_com = int(session['id_community_active'])
     ncommunity = Community.query.get(id_com) #Select * from Cliente where id = id
     session['community_active'] = ncommunity.name
     return redirect(url_for("comunidad_especifica", id=id_com))

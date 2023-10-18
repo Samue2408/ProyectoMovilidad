@@ -1,26 +1,28 @@
 {% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
 body %}
 <h1>Comunidad: {{ comunidad }}</h1>
+<input type="hidden" id="id_com" value="{{ id }}">
 
 <!-- Publicaciones de usuarios -->
 {% for publicacion in publicaciones %}
 
 {% if publicacion.id_com == id %}
-  <div class="publicacion">
-    <p>{{ publicacion.menssages }}</p>
-  </div>
-{% else %}
-  <p>No hay mensajes</p>
+<div class="publicacion">
+  <p>{{ publicacion.menssages }}</p>
+</div>
 {% endif %}
 
 {% endfor %}
 
 <!-- Formulario para crear nueva publicación -->
 <h2>Crear Publicación</h2>
-<form
-  method="post">
+<form>
   <label for="mensaje">Mensaje:</label>
   <textarea id="mensaje" name="mensaje" required></textarea>
-  <button type="submit">Publicar</button>
+  <input type="hidden" id="id_user" value="{{ id_user }}">
+  <button id="publi">Publicar</button>
 </form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/comu.js') }}"></script>
 {% endblock %}
