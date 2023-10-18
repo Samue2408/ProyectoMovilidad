@@ -27,7 +27,9 @@ body {
 #ciclorutas-container.with-margin {
   margin-top: 60px;
 }
-
+.button {
+  border-radius: 25px;
+}
 #map {
   height: 100vh;
 }
