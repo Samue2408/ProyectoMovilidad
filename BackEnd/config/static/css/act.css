@@ -81,6 +81,13 @@ label {
 .col-12 button {
     width: 32%;
     font-size: 1.5vh;
+    background-color:#ae97f9;
+    border-color: #997bfa;
+}
+
+.col-12 button:hover {
+    background-color: #997bfa;
+    border-color: #997bfa;
 }
 
 .col-12 {
