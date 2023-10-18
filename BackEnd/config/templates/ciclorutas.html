@@ -1,25 +1,30 @@
-{% extends './layout.html' %}
-
-{% block title %}CiloRutas{% endblock %}
-
-{% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/stykes_cicloruta.css') }}" />
-{% endblock %}
-
-
-{% block body %}
+{% extends './layout.html' %} {% block title %}CiloRutas{% endblock %} {% block
+styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/stykes_cicloruta.css') }}"
+/>
+{% endblock %} {% block body %}
 <div id="ciclorutas-container" class="with-margin">
-    <h2>Rutas de Ciclorutas en Barranquilla</h2>
-    <p>Si quieres disfrutar de un paseo en bicicleta por Barranquilla, puedes usar las siclorutas que te ofrecen
-        seguridad y comodidad. Estas son rutas diseñadas para el uso de las bicicletas, que atraviesan diferentes zonas
-        de la ciudad. Algunas son exclusivas para ciclistas, otras son compartidas con vehículos motorizados, y otras
-        están en proceso de construcción o propuestas. ¡Anímate a usar tu bicicleta y contribuir al cuidado del medio
-        ambiente!</p>
-    <h3>Rutas:</h3>
-    <ul>
-        {% for ruta in rutas %}
-            <li><a href="/"><strong>{{ ruta.name }}:</strong> {{ ruta.description }}</a></li>
-        {% endfor %}
-    </ul>
+  <h2>Rutas de Ciclorutas en Barranquilla</h2>
+  <p>
+    Si quieres disfrutar de un paseo en bicicleta por Barranquilla, puedes usar
+    las siclorutas que te ofrecen seguridad y comodidad. Estas son rutas
+    diseñadas para el uso de las bicicletas, que atraviesan diferentes zonas de
+    la ciudad. Algunas son exclusivas para ciclistas, otras son compartidas con
+    vehículos motorizados, y otras están en proceso de construcción o
+    propuestas. ¡Anímate a usar tu bicicleta y contribuir al cuidado del medio
+    ambiente!
+  </p>
+  <h3>Rutas:</h3>
+  <ul>
+    {% for ruta in rutas %}
+    <li>
+      <a href="/mapa"
+        ><strong>{{ ruta.name }}:</strong> {{ ruta.description }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 {% endblock %}

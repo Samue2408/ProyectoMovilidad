@@ -1,43 +1,37 @@
-{% extends './layout.html' %} {% block title %}Comunidad{% endblock %} 
-{% block styles %}
-  <link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/comunidad.css') }}"
-  />
-  {% endblock %} 
-  {% block body %}
+{% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
+styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/comunidad.css') }}"
+/>
+{% endblock %} {% block body %}
 <div class="container">
   <h1>¡Bienvenido a la Comunidad {{ comunidad.name }}!</h1>
-  <input type="hidden" id="id_com" value="{{ comunidad.id_com }}">
+  <input type="hidden" id="id_com" value="{{ comunidad.id_com }}" />
   <div class="comment">
-      <p>Explora las Inspiradoras Publicaciones de Nuestra Comunidad</p>
+    <p>Explora las Inspiradoras Publicaciones de Nuestra Comunidad</p>
   </div>
-  
+
   <!-- Formulario para crear nueva publicación -->
-<h2>Crear Publicación</h2>
-<form>
-  <label for="mensaje">Mensaje:</label>
-  <textarea id="mensaje" name="mensaje" required></textarea>
-  <input type="hidden" id="id_user" value="{{ id_user }}">
-  <button id="publi">Publicar</button>
-</form>
+  <h2>Crear Publicación</h2>
+  <form>
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+    <input type="hidden" id="id_user" value="{{ id_user }}" />
+    <button id="publi">Publicar</button>
+  </form>
 </div>
-<br>
-  
-  <!-- Publicaciones de usuarios -->
-  {% for publicacion in publicaciones[::-1] %}
-      {% if publicacion.id_com == comunidad.id_com %}
-          <div class="publicacion">
-              <div class="dark-layer"></div> <!-- Capa oscura para cada publicación -->
-              <p>{{ publicacion.name_user }}</p>
-              <p>{{ publicacion.menssages }}</p>
+<br />
 
-          </div>
-      {% endif %}
-  {% endfor %}
-
-
-{% endblock %}
-{% block scripts %}
+<!-- Publicaciones de usuarios -->
+{% for publicacion in publicaciones[::-1] %} {% if publicacion.id_com ==
+comunidad.id_com %}
+<div class="publicacion">
+  <div class="dark-layer"></div>
+  <!-- Capa oscura para cada publicación -->
+  <p>{{ publicacion.name_user }}</p>
+  <p>{{ publicacion.menssages }}</p>
+</div>
+{% endif %} {% endfor %} {% endblock %} {% block scripts %}
 <script src="{{ url_for('static', filename='js/comu.js') }}"></script>
 {% endblock %}

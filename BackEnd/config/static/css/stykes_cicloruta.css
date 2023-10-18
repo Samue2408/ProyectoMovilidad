@@ -65,7 +65,6 @@ body {
   text-decoration: none; /* Elimina el subrayado del enlace */
   color: inherit; /* Usa el color del texto heredado para el enlace */
   cursor: pointer; /* Cambia el cursor a un puntero al pasar el mouse */
-  font-weight: bold; /* Hace que el texto sea negrita */
 }
 
 /* Cambiar el color del enlace cuando se pasa el mouse sobre él */
