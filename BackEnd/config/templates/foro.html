@@ -1,27 +1,22 @@
-{% extends './layout.html' %} {% block title %}Comunidad{% endblock %} {% block
-styles %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/style_foro.css') }}"
-/>
-
-{% endblock %} {% block body %}
-<h1>Bienvenido al Foro de Comunidades</h1>
+{% extends './layout.html' %} 
+{% block title %}Comunidad{% endblock %} 
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_foro.css') }}" />
+{% endblock %} 
+{% block body %}
+<h1 style="text-align: center;">Bienvenido al Foro de Comunidades</h1>
+<p>En esta sección podrás compartir tus gustos con otros ciclistas de la ciudad. Tienes la oportunidad de crear nuevas comunidades y unirte a las conversaciones de las ya existentes.</p>
 
 <div class="comunidades-box">
   <h2>Lista de Comunidades</h2>
   {% if comunidades %}
-  <ul>
-    {% for comunidad in comunidades %}
-    <li>
-      <a href="/comunidad/{{comunidad.id_com}}"
-        >{{ comunidad.name }}</a
-      >
-    </li>
-    {% endfor %}
-  </ul>
+    <ul>
+      {% for comunidad in comunidades %}
+        <li><a href="/comunidad/{{comunidad.id_com}}">{{ comunidad.name }}</a></li>
+      {% endfor %}
+    </ul>
   {% else %}
-  <p>No hay comunidades disponibles en el foro.</p>
+    <p>No hay comunidades disponibles en el foro.</p>
   {% endif %}
 </div>
 
