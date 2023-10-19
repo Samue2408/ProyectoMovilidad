@@ -65,7 +65,7 @@ body {
 }
 
 .container button {
-  background-color: #8561fa;
+  background-color: #997bfa;
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -81,6 +81,16 @@ body {
 .container button.hidden {
   background-color: transparent;
   border-color: #fff;
+}
+.container button:disabled {
+  background-color: #997bfac4;
+  border-color: #997bfa83;/* Cambia el color de fondo cuando el botón está desactivado */
+  color: white; /* Cambia el color del texto cuando el botón está desactivado */
+  cursor: not-allowed;
+}
+
+.container button:hover {
+  background-color: #8561fa;
 }
 
 .container form {

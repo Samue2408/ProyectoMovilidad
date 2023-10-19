@@ -16,21 +16,28 @@ def users():
 
 @ruta_user.route("/saveuser", methods=["POST"])
 def saveuser():
-    name = request.json['name']
-    email = request.json['email']
+    name = request.json['name'].lower()
+    email = request.json['email'].lower()
     password = request.json['password']
     genre = request.json['genre']
-    user = db.session.query(User.id_user).filter(User.email == email).all()
-    
+    user = db.session.query(User.id_user).filter(User.name == name).all()
+
     result = users_schema.dump(user)
 
     if len(result)==0:
-        new_user = User(name, email, password, genre)
-        db.session.add(new_user)
-        db.session.commit()
-        return jsonify({'mensaje': 'Registro exitoso'})
+        user = db.session.query(User.id_user).filter(User.email == email).all()
+        result = users_schema.dump(user)
+
+        if len(result) == 0:
+            new_user = User(name, email, password, genre)
+            db.session.add(new_user)
+            db.session.commit()
+            return jsonify({'mensaje': 'Registro exitoso'})
+        else:
+            return jsonify({'error': 'Opss... email en uso'}), 401  
     else:
-        return jsonify({'error': 'Opss...'}), 401 
+        return jsonify({'error': 'Opss... nombre en uso'}), 401 
+        
 
 @ruta_user.route("/updateuser", methods=["PUT"])
 def updateuser():

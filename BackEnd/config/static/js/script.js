@@ -20,9 +20,23 @@ document.getElementById("signup").addEventListener("click", function (event) {
   const genre = document.getElementById('genre_r').value;
 
   if (name.trim() === '' || email.trim() === '' || password.trim() === '') {    
-    alert('Por favor, completa todos los campos y/o selecciona un género.');
+    Swal.fire({
+      title: 'Faltan datos',
+      text: 'Por favor, completa todos los campos',
+      icon: 'error',
+      backdrop: false,
+      timer: 4500,
+      timerProgressBar: true,
+    })
   } else if (genre.trim() === '') {    
-    alert('Por favor, selecciona un género.');
+    Swal.fire({
+      title: 'Faltan datos',
+      text: 'Por favor, ingresa el genero',
+      icon: 'error',
+      backdrop: false,
+      timer: 4500,
+      timerProgressBar: true,
+    })
   } else {    
     const dataToSend = {
       name: name,
@@ -42,7 +56,7 @@ document.getElementById("signup").addEventListener("click", function (event) {
       if (data.error) {
         Swal.fire({
           title: data.error,
-          text: 'Ingresa otra direccion de correo electronico',
+          text: 'Ingresa otro valido',
           footer: '<p>Si ya tienes una cuenta, por favor <a href="/login">inicia sesión.</a></p>',
           icon: 'error',
           backdrop: false,
@@ -64,7 +78,7 @@ document.getElementById("signup").addEventListener("click", function (event) {
           text: 'Un gusto tenerte con nosotros',
           icon: 'success',
           backdrop: false,
-          timer: 3500,
+          timer: 2000,
         }).then((result) => {
           window.location.href = "/login";
         });       
@@ -75,6 +89,21 @@ document.getElementById("signup").addEventListener("click", function (event) {
   }  
   event.preventDefault();
 }); 
+
+
+document.getElementById('password_l').addEventListener("input",() => {
+  const password = document.getElementById('password_l').value;
+  const email = document.getElementById('email_l').value;
+  const boton = document.getElementById("signin");
+
+  if (password.trim() !== '' && email.trim() !== ''){
+    
+    boton.disabled = false;
+  }  
+  else{
+    boton.disabled = true;
+  }  
+})
 
 document.getElementById("signin").addEventListener("click", function (event) {
   event.preventDefault();

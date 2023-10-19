@@ -90,6 +90,11 @@ label {
     border-color: #997bfa;
 }
 
+.col-12 button:disabled {
+    background-color: #997bfac4;
+    border-color: #997bfacb;
+}
+
 .col-12 {
     display: flex;
     justify-content: center;
