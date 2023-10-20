@@ -23,8 +23,7 @@ document.getElementById("add_community").addEventListener("click", function (eve
         if (data.error) {
             Swal.fire({
                 title: data.error,
-                text: 'Credenciales incorrectas',
-                footer: '<p>Si has <a href="/hidden_pw">olvidado tu contraseña</a>, puedes restablecerla</p>',
+                text: 'Ingrese otro nombre para la comunidad',
                 icon: 'error',
                 backdrop: false,
                 timer: 7000,
@@ -42,17 +41,7 @@ document.getElementById("add_community").addEventListener("click", function (eve
     })
     .then(response => response.json())
     .then(data => {
-        if (data.error) {
-            Swal.fire({
-              title: data.error,
-              text: 'Credenciales incorrectas',
-              footer: '<p>Si has <a href="/hidden_pw">olvidado tu contraseña</a>, puedes restablecerla</p>',
-              icon: 'error',
-              backdrop: false,
-              timer: 7000,
-              timerProgressBar: true,
-            })
-          } else {
+        
             Swal.fire({
               title: data.mensaje,
               text: 'Creacion de comunidad exitosa',
@@ -60,9 +49,9 @@ document.getElementById("add_community").addEventListener("click", function (eve
               backdrop: false,
               timer: 3500,
             }).then((result) => {
-              window.location.href = "/foro.html";
+              window.location.href = "/foro";
             });           
-          }
+          
     })
     .catch (error => console.error(error));
 

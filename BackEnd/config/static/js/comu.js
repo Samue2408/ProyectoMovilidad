@@ -36,9 +36,11 @@ document.getElementById("publi").addEventListener("click", function (event) {
           icon: "success",
           backdrop: false,
           timer: 3500,
-        }).then((result) => {});
+        }).then((result) => {
+          window.location.reload();
+        });
       }
-      window.location.reload();
+      
     })
     .catch((error) => console.error(error));
 });

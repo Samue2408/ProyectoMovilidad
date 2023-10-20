@@ -23,7 +23,7 @@ def saveusucom():
     print(comm)
 
     result = communities_schema.dump(comm)
-
+    
     if len(result) > 0 : 
         usu_coms =result[0]       
         id_comm = usu_coms['id_com']
@@ -32,8 +32,7 @@ def saveusucom():
         new_usucom = Usu_com(id_comm, id_user, type_usu)
         db.session.add(new_usucom)
         db.session.commit()   
-    
-    return "Datos guardados con exitos"
+        return jsonify({'mensaje': 'Comunidad Creada'})
 
 @ruta_usucom.route("/updateusucom", methods=["PUT"])
 def updateusucom():

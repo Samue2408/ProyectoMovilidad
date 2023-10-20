@@ -17,14 +17,23 @@ def communities():
 
 @ruta_community.route("/savecommunity", methods=["POST"])
 def savecommunity():
-    name = request.json['name']
-    new_community = Community(name)    
-    db.session.add(new_community)
-    db.session.commit()
-    resultall = Community.query.all()
-    result = communities_schema.dump(resultall)
-    session['communities'] = result
-    return jsonify({'mensaje': 'Bienvenido'})
+    name = request.json['name']   
+    commu = db.session.query(Community.id_com).filter(Community.name == name).all()
+    result = communities_schema.dump(commu)
+
+    if len(result) == 0 :
+        new_community = Community(name)    
+        db.session.add(new_community)
+        db.session.commit()
+        resultall = Community.query.all()
+        result = communities_schema.dump(resultall)
+        session['communities'] = result
+        return jsonify({'mensaje': 'Bienvenido'})
+
+    else:
+        return jsonify({'error': 'Opss... nombre en uso'}), 401
+
+    
 
 @ruta_community.route("/updatecommunity", methods=["PUT"])
 def updatecommunity():
