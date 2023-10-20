@@ -60,7 +60,7 @@ document.getElementById("add_community").addEventListener("click", function (eve
               backdrop: false,
               timer: 3500,
             }).then((result) => {
-              window.location.href = "/";
+              window.location.href = "/foro.html";
             });           
           }
     })
